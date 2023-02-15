@@ -13,6 +13,7 @@ import { useSelector } from "react-redux"
 
 const Landing = () => {
     const name = useSelector((state: any) => state.UserSignup.firstName)
+    
 
     console.log("name", name)
     return (

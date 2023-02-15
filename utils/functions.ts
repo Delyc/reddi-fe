@@ -60,3 +60,28 @@ export async function addRedditFunc(
   );
   return response;
 }
+
+
+
+export async function getAllRedditsFunc(
+  endpoint: string,
+) {
+  let response = await axios.get(
+    `http://localhost:5000/api/v1/${endpoint}`,
+  );
+  return response;
+}
+
+
+export async function getSubRedditsFunc(
+  endpoint: string,
+  headers: any
+) {
+  let response = await axios.get(
+    `http://localhost:5000/api/v1/${endpoint}`,
+    {
+      headers,
+    }
+  );
+  return response;
+}
