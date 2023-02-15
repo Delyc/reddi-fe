@@ -2,11 +2,17 @@ import { useState, useEffect } from "react";
 import { getAllRedditsFunc, getSubRedditsFunc } from "@/utils/functions";
 import Image from "next/image";
 import postImage from '../../public/assets/post3.webp'
+import Link from "next/link";
+import { useDispatch } from "react-redux";
+import { setId } from "@/redux/reducers/AllPostsSlice";
 
 
 const GetAll = () => {
+    const dispatch = useDispatch()
     const [sub, setSub] = useState<any>();
     const [reddits, setRedits] = useState<any>();
+
+
 
 
 
@@ -33,10 +39,9 @@ const GetAll = () => {
         <>
             {reddits ?
                 reddits.map((reddit: any, index: number) => {
-                
-                    console.log("sub check", sub)
+                    dispatch(setId(reddit._id))
                     return (
-                        <div key={index} className="mt-10 px-16 bg-white flex flex-col gap-5 py-5">
+                        <Link href ={`/readMore/${reddit._id}`} key={index} className="mt-10 px-16 bg-white flex flex-col gap-5 py-5">
                             <p>{reddit.title}</p>
                             <Image className="w-full h-64 object-fill" src={postImage} alt="post image" width={100} height={100} />
                             <p>{reddit.body}</p>
@@ -54,7 +59,7 @@ const GetAll = () => {
                                 <p>Comment</p>
 
                             </div>
-                        </div>
+                        </Link>
                     )
 
                 }) : <h1>Loading</h1>

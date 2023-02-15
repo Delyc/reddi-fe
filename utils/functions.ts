@@ -85,3 +85,26 @@ export async function getSubRedditsFunc(
   );
   return response;
 }
+
+
+export async function getOneRedditFunc(
+  endpoint: string,
+) {
+  let response = await axios.get(
+    `http://localhost:5000/api/v1/${endpoint}`,
+  );
+  return response;
+}
+
+export async function commentFunc(
+  endpoint: string,
+  body: any,
+  headers : any
+) {
+  let response = await axios.post(
+    `http://localhost:5000/api/v1/${endpoint}`, body, {
+      headers,
+    }
+  );
+  return response;
+}

@@ -5,6 +5,7 @@ import storage from 'redux-persist/lib/storage'
 import UserSignupSlice from './reducers/UserSignupSlice'
 import UserLoginSlice from './reducers/UserLoginSlice'
 import SubRedditSlice from './reducers/SubRedditSlice'
+import AllPostsSlice from './reducers/AllPostsSlice'
 // import { AuthApi } from '@/utils/AuthAPI'
 
 const persistConfig = {
@@ -16,6 +17,7 @@ const rootReducer = combineReducers({
     UserSignup : UserSignupSlice,
     UserLogin : UserLoginSlice,
     SubReddit : SubRedditSlice,
+    AllPosts : AllPostsSlice
  
 })
 
