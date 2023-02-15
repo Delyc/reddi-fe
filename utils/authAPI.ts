@@ -9,15 +9,15 @@ interface Signup {
 }
 
 
-export const authApi = createApi({
+export const AuthApi = createApi({
     reducerPath: "authApi",
     baseQuery: fetchBaseQuery({ baseUrl: "http://localhost:5000/api/v1" }),
     endpoints:(builder) => ({
         signup: builder.query<Signup[], void>({
-            query: () => '/contacts'
+            query: () => '/accounts/signup'
         }),
 
     })
 })
 
-export const { useSignupQuery } = authApi;
+export const { useSignupQuery } = AuthApi;

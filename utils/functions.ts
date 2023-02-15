@@ -6,3 +6,12 @@ export async function userSignupFunc(endpoint: string, body: any) {
     return response;
 
 }
+
+
+export async function userLoginFunc(endpoint: string, body: any) {
+  let response = await axios.post(
+    `http://localhost:5000/api/v1/${endpoint}`,
+    body
+  );
+  return response;
+}

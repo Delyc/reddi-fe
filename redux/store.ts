@@ -3,6 +3,8 @@ import {persistReducer, persistStore} from 'redux-persist'
 import thunk from 'redux-thunk'
 import storage from 'redux-persist/lib/storage'
 import UserSignupSlice from './reducers/UserSignupSlice'
+import UserLoginSlice from './reducers/UserLoginSlice'
+// import { AuthApi } from '@/utils/AuthAPI'
 
 const persistConfig = {
     key: 'root',
@@ -10,16 +12,17 @@ const persistConfig = {
 }
 
 const rootReducer = combineReducers({
-    UserSignup : UserSignupSlice
+    UserSignup : UserSignupSlice,
+    UserLogin : UserLoginSlice
  
 })
 
 const persistedReducer = persistReducer(persistConfig, rootReducer)
 
-
 export const store = configureStore({
-    reducer: persistedReducer,
-    middleware: [thunk]
-})
+  reducer: persistedReducer,
+  // [AuthApi.reducerPath]: AuthApi.reducer,
+  middleware: [thunk],
+});
 
 export const persistor = persistStore(store)
