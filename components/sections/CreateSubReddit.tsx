@@ -4,15 +4,24 @@ import ContentWrapper from "../wrappers/ContentWrapper";
 import Input from "../ui/Input";
 import Button from "../ui/Button";
 import Email from "../svgs/FormSvgs";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { userSignupFunc } from "@/utils/functions";
 import { userLoginFunc } from "@/utils/functions";
 import { toast } from "react-toastify";
 import { useDispatch } from "react-redux";
 import { setUserFirstName } from "@/redux/reducers/UserSignupSlice";
 import { addSubRedditFunc } from "@/utils/functions";
+import getUserToken from "@/utils/getUserToken";
 
 const CreateSubReddit = () => {
+  const [token , setToken] = useState("")
+
+  useEffect(() => {
+    console.log(getUserToken());
+    return setToken(getUserToken());
+
+  }, [])
+
   const subRedditData = {
     title: "",
     summary: "",
@@ -29,9 +38,7 @@ const CreateSubReddit = () => {
     e.preventDefault();
 
     await addSubRedditFunc("reddits", subReddit, {
-      headers: {
-        authorization: "Bearer " + localStorage.getItem("token"),
-      },
+      authorization: "Bearer " + token,
     })
       .then((res) => {
         e.preventDefault();
