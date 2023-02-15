@@ -4,6 +4,7 @@ import thunk from 'redux-thunk'
 import storage from 'redux-persist/lib/storage'
 import UserSignupSlice from './reducers/UserSignupSlice'
 import UserLoginSlice from './reducers/UserLoginSlice'
+import SubRedditSlice from './reducers/SubRedditSlice'
 // import { AuthApi } from '@/utils/AuthAPI'
 
 const persistConfig = {
@@ -13,7 +14,8 @@ const persistConfig = {
 
 const rootReducer = combineReducers({
     UserSignup : UserSignupSlice,
-    UserLogin : UserLoginSlice
+    UserLogin : UserLoginSlice,
+    SubReddit : SubRedditSlice,
  
 })
 

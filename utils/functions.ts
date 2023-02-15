@@ -15,3 +15,12 @@ export async function userLoginFunc(endpoint: string, body: any) {
   );
   return response;
 }
+
+
+export async function addSubRedditFunc(endpoint: string, body: any, headers: any) {
+  let response = await axios.post(
+    `http://localhost:5000/api/v1/${endpoint}`,
+    body
+  );
+  return response;
+}
