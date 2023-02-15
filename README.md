@@ -1,38 +1,59 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## REDDIT CLONE FRONTEND IN NEXTJS
 
-## Getting Started
 
-First, run the development server:
+## Introduction
+This is a full stack application that cna be used to share your activities or post anything and get to know what others think about it through liking and commenting on the post. It allows people to create accounts and share anything by creating posts. Check all features below
 
-```bash
+## Deployment
+This project has been deployed on Netlify. Check the link below to test the features.
+- [Heroku Project](https://customer-que-management.herokuapp.com)
+
+## Technologies
+- NextJS (ReactJs framework)
+- Typescript
+- TailwindCSS
+- Redux Toolkit
+- Redux persist
+- Jest ( for testing)
+- Axios
+
+## Features:
+- Creating user account
+- Creating and joining communities
+- Creating posts
+- Liking posts
+- Commenting on posts
+
+## Getting started at local development
+To get you up and running on your laptop. Check the pre-requisites and the commands.
+### Pre-requisites
+To use and develop upon this project, you need to have a good understanding of the technologies used. This project is for advanced beginners. All documentations I believe to be helpful will be linked below but for now these is what you need
+- NextJS - Intermediate
+- TailwindCSS - Intermediate
+- Redux - Intermediate
+- Typescript - Intermediate
+- Testing - Beginner
+
+
+### Instructions
+These instructions are written to allow you to copy and paste them and get started. Each command will be explained afterward.
+Assuming you have **Git, Docker, Python** installed. Open the terminal and change to the folder you want save the project.
+```
+git clone https://github.com/Delyc/reddi-fe
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
+
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## How to contribute
+Just start by forking the project
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+## About author
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+[Delyce Twizeyimana](https://github.com/delyc) - An open-minded Software Engineer with a keen interest in creating elegant tech solutions
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+<footer>
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+Good things come to those who never stop dreaming.
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+</footer>
