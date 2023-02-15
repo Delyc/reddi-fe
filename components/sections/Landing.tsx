@@ -12,7 +12,7 @@ import { useSelector } from "react-redux"
 
 
 const Landing = () => {
-    // const name = useSelector((state: any) => state.UserSignup.firstName)
+    const name = useSelector((state: any) => state.UserSignup.firstName)
 
     console.log("name", name)
     return (
@@ -24,9 +24,9 @@ const Landing = () => {
                 <div>
                     <Heading1>Trending Posts</Heading1>
                     <div className="grid grid-cols-4 relative gap-x-10 w-full mt-10">
-                        {posts.map((post) => {
+                        {posts.map((post, index) => {
                             return (
-                                <div className="rounded-md  w-[16rem]">
+                                <div key={index} className="rounded-md  w-[16rem]">
                                     <Image className="w-full rounded-md h-full object-contain" src={postImage} alt="post image" width={100} height={100} />
                                     <div className="absolute rounded-md  bg-black/40 text-white h-full px-4 top-0 w-[16rem] gap-4 justify-center flex flex-col flex-wrap break-words">
                                         <Heading3 className="font-bold">{post.title}</Heading3>

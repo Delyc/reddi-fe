@@ -10,7 +10,7 @@ const persistConfig = {
 }
 
 const rootReducer = combineReducers({
-    userSignup : UserSignupSlice
+    UserSignup : UserSignupSlice
  
 })
 

@@ -24,65 +24,70 @@ import { setUserFirstName } from "@/redux/reducers/UserSignupSlice";
 
 const Signup = () => {
 
-
-    const [firstName, setFirstName] = useState("")
-    const [lastName, setLastName] = useState("")
-    const [email, setEmail] = useState("")
-    const [password, setPassword] = useState("")
-    const [username, setUsername] = useState("")
-
-    const [firstNameErr, setFirstNameErr] = useState(false)
-    const [lastNameErr, setLastNameErr] = useState(false)
-    const [emailErr, setEmailErr] = useState(false)
-    const [passwordErr, setPasswordErr] = useState(false)
-    const [usernameErr, setUsernameErr] = useState(false)
-
-    const onChangeFirstName = (e ) => {
-        setFirstName(e.target.value)
-        setFirstNameErr(!validName(e.target.value))
+    const userData = {
+        firstName: "",
+        lastName: "",
+        email: "",
+        password: "",
+        username: ""
     }
 
-    const onChangeLastName = (e ) => {
-        setLastName(e.target.value)
-        setLastNameErr(!validName(e.target.value))
+    const [userSignup, setUserSignup] = useState(userData)
+    const inputHandler = (e) => {
+        setUserSignup({ ...userSignup, [e.target.name]: e.target.value });
     }
 
-    const onChangeEmail = (e ) => {
-        setEmail(e.target.value)
-        setEmailErr(!validEmail(e.target.value))
-    }
 
-    const onChangePassword = (e ) => {
-        setPassword(e.target.value)
-        setPasswordErr(!validName(e.target.value))
-    }
+    // const [firstName, setFirstName] = useState("")
+    // const [lastName, setLastName] = useState("")
+    // const [email, setEmail] = useState("")
+    // const [password, setPassword] = useState("")
+    // const [username, setUsername] = useState("")
 
-    const onChangeUsername = (e ) => {
-        setUsername(e.target.value)
-        setUsernameErr(!validUsername(e.target.value))
-    }
+    // const [firstNameErr, setFirstNameErr] = useState(false)
+    // const [lastNameErr, setLastNameErr] = useState(false)
+    // const [emailErr, setEmailErr] = useState(false)
+    // const [passwordErr, setPasswordErr] = useState(false)
+    // const [usernameErr, setUsernameErr] = useState(false)
+
+    // const onChangeFirstName = (e ) => {
+    //     setFirstName(e.target.value)
+    //     setFirstNameErr(!validName(e.target.value))
+    // }
+
+    // const onChangeLastName = (e ) => {
+    //     setLastName(e.target.value)
+    //     setLastNameErr(!validName(e.target.value))
+    // }
+
+    // const onChangeEmail = (e ) => {
+    //     setEmail(e.target.value)
+    //     setEmailErr(!validEmail(e.target.value))
+    // }
+
+    // const onChangePassword = (e ) => {
+    //     setPassword(e.target.value)
+    //     setPasswordErr(!validName(e.target.value))
+    // }
+
+    // const onChangeUsername = (e ) => {
+    //     setUsername(e.target.value)
+    //     setUsernameErr(!validUsername(e.target.value))
+    // }
     
     const dispatch = useDispatch()
 
     const onSubmit =  async( e) => {
         e.preventDefault()
 
-        const userData = {
-            firstName: firstName,
-            lastName: lastName,
-            email : email,
-            password : password,
-            username : username
 
-        }
-        await userSignupFunc('accounts/signup', userData)
+        await userSignupFunc('accounts/signup', userSignup)
         .then((res) => {
          e.preventDefault()
             
             console.log("response", res)
-            console.log("firstname", firstName)
-            console.log("reg data", userData.firstName)
-            dispatch(setUserFirstName(firstName))
+            console.log("reg data", userSignup.firstName)
+            dispatch(setUserFirstName(userSignup.firstName))
             toast.success("sign up success")
             
         }).catch((err)=>{
@@ -101,34 +106,29 @@ const Signup = () => {
                         <form  className="flex flex-col gap-5 w-2/5">
                             <div className="flex relative items-center w-full">
                                 <Email classname="absolute left-5" fill="#ffffff" />
-                                <Input className="w-full px-14"  placeholder="First Name" name="firstName" onChange={(e) => {onChangeFirstName(e)}}/>
+                                <Input className="w-full px-14"  placeholder="First Name" name="firstName" onChange={inputHandler}/>
                             </div>
-                            <p>{firstNameErr && <p>name </p>}</p>
                             <div className="flex relative items-center w-full">
                                 <Email classname="absolute left-5" fill="#ffffff" />
-                                <Input className="w-full px-14" placeholder="Last Name" name="lastName" onChange={(e) => {onChangeLastName(e)}} />
+                                <Input className="w-full px-14" placeholder="Last Name" name="lastName" onChange={inputHandler} />
                             </div>
-                            <p>{lastNameErr && <p>name </p>}</p>
 
                             <div className="flex relative items-center w-full">
                                 <Email classname="absolute left-5" fill="#ffffff" />
-                                <Input className="w-full px-14" placeholder="Email" name="email" onChange={(e) => {onChangeEmail(e)}} />
+                                <Input className="w-full px-14" placeholder="Email" name="email" onChange={inputHandler} />
                             </div>
-                            <p>{emailErr && <p>name </p>}</p>
 
                             <div className="flex relative items-center w-full">
                                 <Email classname="absolute left-5" fill="#ffffff" />
-                                <Input className="w-full px-14" placeholder="Password" name="password" onChange={(e) => {onChangePassword(e)}} />
+                                <Input className="w-full px-14" placeholder="Password" name="password" onChange={inputHandler} />
                             </div>
-                            <p>{passwordErr && <p>name </p>}</p>
 
                             <div className="flex relative items-center w-full">
                                 <Email classname="absolute left-5" fill="#ffffff" />
-                                <Input className="w-full px-14" placeholder="Username" name="username" onChange={(e) => {onChangeUsername(e)}} />
+                                <Input className="w-full px-14" placeholder="Username" name="username" onChange={inputHandler} />
                             </div>
-                            <p>{usernameErr && <p>name </p>}</p>
 
-                            <Button type="submit" text="Sign up" disabled={ firstNameErr && lastNameErr && emailErr && passwordErr && usernameErr} onClick={onSubmit}/>
+                            <Button type="submit" text="Sign up"  onClick={onSubmit}/>
                         </form>
                     </div>
                 </ContentWrapper>
