@@ -93,12 +93,12 @@ const readMore = () => {
 
                         <div className="post-com">
                             <h4>commmets</h4>
-                            <p>{comments.body}</p>
-                            {/* {post.comments.map((comment: any) => {
+                           
+                            {comments.map((comment: any) => {
               return <div className="comuser"> <p>{comment.body} by <span>{comment.user.firstName}</span>  </p> 
               
                 </div>;
-            })} */}
+            })}
                         </div>
                     </>
                 ) : (
