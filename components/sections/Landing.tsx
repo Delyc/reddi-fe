@@ -9,6 +9,7 @@ import Button from "../ui/Button";
 import ContentWrapper from "../wrappers/ContentWrapper";
 import PageWrapper from "../wrappers/PageWrapper";
 import { useSelector } from "react-redux"
+import GetAll from "./GetAll";
 
 
 const Landing = () => {
@@ -54,56 +55,12 @@ const Landing = () => {
                                     })}
                                 </ul>
                             </div>
-                            <div className="mt-10 px-16 bg-white flex flex-col gap-5 py-5">
-                                <p>A Stork mother, making a tough decision, by throwing one of her chicks out of the nest to enhance the survival probability of her other chicks.</p>
-
-                                <Image className="w-full h-64 object-fill" src={postImage} alt="post image" width={100} height={100} />
-                                <p>A Stork mother, making a tough decision, by throwing one of her chicks out of the nest to enhance the survival probability of her other chicks.</p>
-                                <div className="flex gap-4">
-                                    <p>Like</p>
-                                    <p>dislike</p>
-                                    <p>Comment</p>
-
-                                </div>
+                            <GetAll />
                             </div>
+                    
 
-                            <div className="mt-10 px-16 bg-white flex flex-col gap-5 py-5">
-                                <p>A Stork mother, making a tough decision, by throwing one of her chicks out of the nest to enhance the survival probability of her other chicks.</p>
-
-                                <Image className="w-full h-64 object-fill" src={postImage} alt="post image" width={100} height={100} />
-                                <p>A Stork mother, making a tough decision, by throwing one of her chicks out of the nest to enhance the survival probability of her other chicks.</p>
-                                <div className="flex gap-4">
-                                    <p>Like</p>
-                                    <p>dislike</p>
-                                    <p>Comment</p>
-
-                                </div>
-                            </div>
-                            <div className="mt-10 px-16 bg-white flex flex-col gap-5 py-5">
-                                <p>A Stork mother, making a tough decision, by throwing one of her chicks out of the nest to enhance the survival probability of her other chicks.</p>
-
-                                <Image className="w-full h-64 object-fill" src={postImage} alt="post image" width={100} height={100} />
-                                <p>A Stork mother, making a tough decision, by throwing one of her chicks out of the nest to enhance the survival probability of her other chicks.</p>
-                                <div className="flex gap-4">
-                                    <p>Like</p>
-                                    <p>dislike</p>
-                                    <p>Comment</p>
-
-                                </div>
-                            </div>
-                            <div className="mt-10 px-16 bg-white flex flex-col gap-5 py-5">
-                                <p>A Stork mother, making a tough decision, by throwing one of her chicks out of the nest to enhance the survival probability of her other chicks.</p>
-
-                                <Image className="w-full h-64 object-fill" src={postImage} alt="post image" width={100} height={100} />
-                                <p>A Stork mother, making a tough decision, by throwing one of her chicks out of the nest to enhance the survival probability of her other chicks.</p>
-                                <div className="flex gap-4">
-                                    <p>Like</p>
-                                    <p>dislike</p>
-                                    <p>Comment</p>
-
-                                </div>
-                            </div>
-                        </div>
+                        
+                        
 
                         <div className="bg-white flex flex-col gap-4 px-10 py-10 h-80">
                             <p>Sub reddit one</p>

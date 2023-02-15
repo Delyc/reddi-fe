@@ -108,3 +108,31 @@ export async function commentFunc(
   );
   return response;
 }
+
+
+export async function likePostFunc(
+  endpoint: string,
+  headers: any
+
+) {
+  let response = await axios.post(
+    `http://localhost:5000/api/v1/${endpoint}`,{
+      headers
+    }
+  );
+  return response;
+}
+
+
+export async function dislikePostFunc(
+  endpoint: string,
+  headers: any
+) {
+  let response = await axios.post(
+    `http://localhost:5000/api/v1/${endpoint}`,{
+      headers
+    }
+  );
+  return response;
+}
+
