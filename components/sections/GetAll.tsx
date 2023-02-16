@@ -81,7 +81,7 @@ const GetAll = () => {
                             {sub.map((sub: any, index: number) => {
                                 return (
 
-                                    <p>{sub._id === reddit.subreddit ? sub.title : ""}</p>
+                                    <p key={index}>{sub._id === reddit.subreddit ? sub.title : ""}</p>
                                     // <div>hello {sub._id}</div>
                                 )
                             })}
