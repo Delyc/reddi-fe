@@ -18,19 +18,19 @@ const home = () => {
             <section className="px-6 xl:mx-auto xl:max-w-[80rem] flex flex-col items-center ">
                 <header className="flex justify-between items-center py-5 w-full fixed z-50 px-6 xl:px-20 bg-white border-b">
                     <h1 className="text-[#1d4865] font-bold text-3xl">BeMyVoice</h1>
-                    <div className="w-12 h-12">
+                    <div className="w-12 h-12 md:hidden">
 
                         <svg className="w-full h-full" width="800px" height="800px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M2 7a1 1 0 0 1 1-1h18a1 1 0 1 1 0 2H3a1 1 0 0 1-1-1zm0 5a1 1 0 0 1 1-1h18a1 1 0 1 1 0 2H3a1 1 0 0 1-1-1zm1 4a1 1 0 1 0 0 2h18a1 1 0 1 0 0-2H3z" fill="#eb5b39" /></svg>
 
                     </div>
 
-                    <ul className="mdflex gap-10 hidden md:block">
+                    <ul className="md:flex gap-10 hidden ">
                         <li>Home</li>
                         <li>About</li>
                         <li>Blog</li>
                         <li>Help</li>
                     </ul>
-                    <div className="md:flex gap-10 hidden md:block">
+                    <div className="md:flex gap-10 hidden ">
                         <Button className="bg-white border border-[#eb5b39] text-[#eb5b39] font-bold rounded-[50px]" text="Sign up" />
                         <Button className="bg-[#eb5b39]" text="Support us" />
                     </div>
@@ -38,7 +38,7 @@ const home = () => {
 
                 <section className="grid grid-cols-1 xl:grid-cols-2 gap-x-20 gap-y-10 mt-24 xl:mt-44 xl:px-20">
                     <div className="flex flex-col gap-5 mt-10">
-                        <h1 className="text-[40px] xl:text-[50px] font-bold text-[#1d4865]">Want anything to be easy with <span className="text-[#eb5b39]">LaslesVPN</span> .</h1>
+                        <h1 className="text-[40px] xl:text-[55px] font-bold text-[#1d4865]">Want anything to be easy with <span className="text-[#eb5b39]">LaslesVPN</span> .</h1>
                         <p className="text-[#4F5665] text-[16px] leading-[30px]">Provide a network for all your needs with ease and fun using LaslesVPN discover interesting features from us.</p>
                         <Button className="bg-[#eb5b39] w-44 rounded-[5px]" text="Get started" />
                     </div>
@@ -185,7 +185,7 @@ const home = () => {
                                 <Button text="Read more" className="border border-[#eb5b39] text-[#eb5b39]" />
                             </div>
                         </div>
-                        <div className="relative col-span-1">
+                        <div className="relative col-span-1 mt-[-160px] xl:mt-0">
                             <div className="relative">
                                 <Image className="w-full rounded-[10px]" src={post3} alt="image" width={100} height={100} />
                                 <div className="absolute bottom-0 left-0 px-10 py-1 bg-slate-200 text-[#1d4865] font-bold">
