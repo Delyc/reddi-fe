@@ -94,8 +94,8 @@ const ReadMore = () => {
                         <div className="post-com">
                             <h4>commmets</h4>
                            
-                            {comments.map((comment: any) => {
-              return <div className="comuser"> <p>{comment.body} by <span>{comment.user.firstName}</span>  </p> 
+                            {comments.map((comment: any, index: number) => {
+              return <div key={index} className="comuser"> <p>{comment.body} by <span>{comment.user.firstName}</span>  </p> 
               
                 </div>;
             })}
