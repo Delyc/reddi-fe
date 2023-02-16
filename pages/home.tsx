@@ -18,7 +18,7 @@ import { useSelector } from "react-redux"
 import GetAll from "@/components/sections/GetAll";
 
 
-const home = () => {
+const Home = () => {
     const name = useSelector((state: any) => state.UserSignup.firstName)
     
 
@@ -91,4 +91,4 @@ const home = () => {
     );
 }
 
-export default home;
+export default Home;
