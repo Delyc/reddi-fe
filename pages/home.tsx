@@ -4,7 +4,7 @@ import { Heading1, Heading3, Paragraph } from "@/components/ui/Typography";
 // import SideNavBarWrapper from "../wrappers/SideNavBarWrapper";
 import SideNavBarWrapper from "@/components/wrappers/SideNavBarWrapper";
 import Image from "next/image";
-import postImage from '../../public/assets/post3.webp'
+import postImage from '../public/assets/post3.webp'
 import centerNavItems from "@/data/centerNavItems";
 import Link from "next/link";
 // import Button from "../ui/Button";

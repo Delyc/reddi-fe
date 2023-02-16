@@ -5,7 +5,7 @@ import Landing from "@/components/sections/Landing";
 export default function Home() {
   return (
     <>
-    <section className="h-full bg-background">
+    <section className="h-full ">
       <Landing />
    
 

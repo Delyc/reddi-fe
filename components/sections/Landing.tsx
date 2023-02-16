@@ -3,15 +3,15 @@
 
 import Button from "@/components/ui/Button";
 import Image from "next/image";
-import heroImage from '../public/assets/heroimage.png'
-import net from '../public/assets/net.png'
-import red from '../public/assets/red.png'
-import amazon from '../public/assets/amazon.png'
-import discord from '../public/assets/discord.png'
-import spotify from '../public/assets/spotify.png'
-import whatwedo from '../public/assets/whatwedo.png'
+import heroImage from '../../public/assets/heroimage.png'
+import net from '../../public/assets/net.png'
+import red from '../../public/assets/red.png'
+import amazon from '../../public/assets/amazon.png'
+import discord from '../../public/assets/discord.png'
+import spotify from '../../public/assets/spotify.png'
+import whatwedo from '../../public/assets/whatwedo.png'
 import Input from "@/components/ui/Input";
-import post3 from '../public/assets/post3.webp'
+import post3 from '../../public/assets/post3.webp'
 
 const Landing = () => {
     return (
