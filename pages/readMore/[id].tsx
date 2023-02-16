@@ -6,7 +6,7 @@ import Image from "next/image";
 import { commentFunc } from "@/utils/functions";
 import getUserToken from "@/utils/getUserToken";
 
-const readMore = () => {
+const ReadMore = () => {
     const id = useSelector((state: any) => state.AllPosts.id)
     const [token , setToken] = useState("")
 
@@ -109,4 +109,4 @@ const readMore = () => {
     );
 }
 
-export default readMore;
+export default ReadMore;
