@@ -109,7 +109,7 @@ const CreateReddit = () => {
                     Select subreddit...
                   </option>
                   {options.map((option : any, index : any) => (
-                    <option key={option.id} value={option.id}>
+                    <option key={index} value={option.id}>
                       {option.name}
                     </option>
                   ))}
