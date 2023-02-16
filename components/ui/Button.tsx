@@ -11,7 +11,7 @@ const Button = ({type, text, className, onChange, onClick, disabled} : Props) =>
   console.log("disable", disabled)
   return (
     <button
-      className={`${className}  text-white py-3 px-10 rounded-sm`}
+      className={`${className}   py-3 px-10 rounded-sm`}
       type={type}
       onClick={onClick}
       onChange={onChange}

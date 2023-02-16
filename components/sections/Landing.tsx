@@ -35,7 +35,7 @@ const Landing = () => {
                     </ul>
                     <div className="md:flex gap-10 hidden ">
                         <Button className="bg-white border border-[#eb5b39] text-[#eb5b39] font-bold rounded-[50px]" text="Sign up" />
-                        <Button className="bg-[#eb5b39]" text="Support us" />
+                        <Button className="bg-[#eb5b39] text-white" text="Support us" />
                     </div>
                 </header>
 
@@ -43,7 +43,7 @@ const Landing = () => {
                     <div className="flex flex-col gap-5 mt-10">
                         <h1 className="text-[40px] xl:text-[55px] font-bold text-[#1d4865]">Want anything to be easy with <span className="text-[#eb5b39]">LaslesVPN</span> .</h1>
                         <p className="text-[#4F5665] text-[16px] leading-[30px]">Provide a network for all your needs with ease and fun using LaslesVPN discover interesting features from us.</p>
-                        <Button className="bg-[#eb5b39] w-44 rounded-[5px]" text="Get started" />
+                        <Button className="bg-[#eb5b39] text-white w-44 rounded-[5px]" text="Get started" />
                     </div>
                     <div className="flex xl:justify-center h-[10rem] xl:h-[30rem] ">
                         <Image className="w-5/6 object-contain h-full " src={heroImage} alt="hero image" width={100} height={100} />
