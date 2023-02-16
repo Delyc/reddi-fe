@@ -140,13 +140,13 @@ const Landing = () => {
                     <div className="flex flex-col gap-5">
                         <Image className="w-14 h-14 rounded-full" src={heroImage} alt="image" width={100} height={100} />
                         <h1 className="leading-[50px] text-[35px] font-bold text-[#1d4865]">Our Missiom</h1>
-                        <p className="text-[#4F5665] text-[16px] leading-[30px]">Producing, prototyping and testing sketches, high-fidelity wireframes and the final UI is a process that results in intuitive and impactful design that's easy on the eyes.</p>
+                        <p className="text-[#4F5665] text-[16px] leading-[30px]">Producing, prototyping and testing sketches, high-fidelity wireframes and the final UI is a process that results in intuitive and impactful design that{"'"}s easy on the eyes.</p>
 
                     </div>
                     <div className="flex flex-col gap-5">
                         <Image className="w-14 h-14 rounded-full" src={heroImage} alt="image" width={100} height={100} />
                         <h1 className="leading-[50px] text-[35px] font-bold text-[#1d4865]">Our Missiom</h1>
-                        <p className="text-[#4F5665] text-[16px] leading-[30px]">Producing, prototyping and testing sketches, high-fidelity wireframes and the final UI is a process that results in intuitive and impactful design that's easy on the eyes.</p>
+                        <p className="text-[#4F5665] text-[16px] leading-[30px]">Producing, prototyping and testing sketches, high-fidelity wireframes and the final UI is a process that results in intuitive and impactful design that{"'"}s easy on the eyes.</p>
 
                     </div>
                 </section>
