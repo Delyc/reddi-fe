@@ -4,7 +4,7 @@ interface Props {
 
 const PageWrapper = ({ children }: Props) => {
     return (
-        <section className="relative">
+        <section className="px-6 xl:mx-auto xl:max-w-[80rem] flex flex-col items-center ">
             {children}
         </section>
     );

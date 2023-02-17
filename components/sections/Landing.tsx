@@ -12,32 +12,18 @@ import spotify from '../../public/assets/spotify.png'
 import whatwedo from '../../public/assets/whatwedo.png'
 import Input from "@/components/ui/Input";
 import post3 from '../../public/assets/post3.webp'
+import Navbar from "../layouts/Navbar";
+import { useState } from "react";
+import PageWrapper from "../wrappers/PageWrapper";
 
 const Landing = () => {
+    const [show, setShow] = useState<boolean>(false)
     return (
         // <section className="bg-[#F6F6F6]">
         <>
 
-            <section className="px-6 xl:mx-auto xl:max-w-[80rem] flex flex-col items-center ">
-                <header className="flex justify-between items-center py-5 w-full fixed z-50 px-6 xl:px-20 bg-white border-b">
-                    <h1 className="text-[#1d4865] font-bold text-3xl">BeMyVoice</h1>
-                    <div className="w-12 h-12 md:hidden">
-
-                        <svg className="w-full h-full" width="800px" height="800px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M2 7a1 1 0 0 1 1-1h18a1 1 0 1 1 0 2H3a1 1 0 0 1-1-1zm0 5a1 1 0 0 1 1-1h18a1 1 0 1 1 0 2H3a1 1 0 0 1-1-1zm1 4a1 1 0 1 0 0 2h18a1 1 0 1 0 0-2H3z" fill="#eb5b39" /></svg>
-
-                    </div>
-
-                    <ul className="md:flex gap-10 hidden ">
-                        <li>Home</li>
-                        <li>About</li>
-                        <li>Blog</li>
-                        <li>Help</li>
-                    </ul>
-                    <div className="md:flex gap-10 hidden ">
-                        <Button className="bg-white border border-[#eb5b39] text-[#eb5b39] font-bold rounded-[50px]" text="Sign up" />
-                        <Button className="bg-[#eb5b39] text-white" text="Support us" />
-                    </div>
-                </header>
+           <PageWrapper>
+                <Navbar show={show} handleModal= {()=>setShow(!show)} />
 
                 <section className="grid grid-cols-1 xl:grid-cols-2 gap-x-20 gap-y-10 mt-24 xl:mt-44 xl:px-20">
                     <div className="flex flex-col gap-5 mt-10">
@@ -263,7 +249,7 @@ const Landing = () => {
 
 
 
-            </section>
+            </PageWrapper>
             <footer className="grid grid-col-1 xl:grid-cols-3 gap-x-20 mt-10 xl:mt-0 py-10 xl:py-20 px-6 bg-[#1d4865] xl:px-40 text-white/80">
                 <div className="flex flex-col gap-5">
                     <h1 className="text-[35px] text-[#eb5b39] font-bold">BeMyVoice</h1>
