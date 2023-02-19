@@ -29,9 +29,7 @@ const Talents = () => {
         <>
             <PageWrapper>
                 {/* <SideNavBarWrapper /> */}
-                <Navbar show={false} handleModal={function (): void {
-                    throw new Error("Function not implemented.");
-                }} />
+                <Navbar />
 
 
                 <ContentWrapper>

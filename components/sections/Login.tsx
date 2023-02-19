@@ -11,6 +11,7 @@ import { toast } from "react-toastify";
 import { useDispatch } from "react-redux";
 import { setUserFirstName } from "@/redux/reducers/UserSignupSlice";
 import Navbar from "../layouts/Navbar";
+import { useRouter } from "next/router";
 
 
 const Login = () => {
@@ -45,9 +46,7 @@ const Login = () => {
   return (
     <>
       <PageWrapper>
-        <Navbar show={false} handleModal={function (): void {
-          throw new Error("Function not implemented.");
-        } } />
+        <Navbar />
         <ContentWrapper className="flex items-center">
           <div className="w-full h-fit flex flex-col items-center gap-5 justify-center">
             <h1>Login</h1>
