@@ -2,24 +2,24 @@
 
 const centerNavItems = [
     {
-        title: "Hot",
+        title: "All Posts",
         path: "/"
 
     },
     {
-        title: "Everywhere",
-        path: "/"
-
-
-    },
-    {
-        title: "New",
+        title: "Music",
         path: "/"
 
 
     },
     {
-        title: "Top",
+        title: "Fashion",
+        path: "/"
+
+
+    },
+    {
+        title: "Dancing",
         path: "/"
 
 

@@ -5,7 +5,7 @@ interface Props {
 
 const ContentWrapper = ({ children, className }: Props) => {
     return (
-        <section className={` ${className} absolute top-20 py-10 left-64 px-20 min-h-screen w-[83.12%] flex flex-col gap-10 bg-background`}>
+        <section className={` ${className}   py-32  xl:px-20 min-h-screen w-full flex flex-col gap-10`}>
             {children}
         </section>
     );
