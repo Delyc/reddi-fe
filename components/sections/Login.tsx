@@ -10,6 +10,7 @@ import { userLoginFunc } from "@/utils/functions";
 import { toast } from "react-toastify";
 import { useDispatch } from "react-redux";
 import { setUserFirstName } from "@/redux/reducers/UserSignupSlice";
+import Navbar from "../layouts/Navbar";
 
 
 const Login = () => {
@@ -44,7 +45,9 @@ const Login = () => {
   return (
     <>
       <PageWrapper>
-        <SideNavBarWrapper />
+        <Navbar show={false} handleModal={function (): void {
+          throw new Error("Function not implemented.");
+        } } />
         <ContentWrapper className="flex items-center">
           <div className="w-full h-fit flex flex-col items-center gap-5 justify-center">
             <h1>Login</h1>
@@ -71,7 +74,7 @@ const Login = () => {
               </div>
 
 
-              <Button type="submit" text="Sign up" onClick={onSubmit} />
+              <Button type="submit" text="Login" onClick={onSubmit} />
             </form>
           </div>
         </ContentWrapper>
