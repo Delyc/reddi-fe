@@ -3,10 +3,18 @@ import Button from "../ui/Button";
 import Input from "../ui/Input";
 import Link from "next/link";
 import { useState } from "react";
+import { toast } from "react-toastify";
 
 const Navbar = ({show, handleModal}:{show: boolean; handleModal: () => void;}) => {
   console.log("clicked")
+const user = localStorage.getItem("token")
+console.log(user)
 
+const handleLogout = () => {
+  localStorage.removeItem("user");
+    localStorage.removeItem("token");
+    toast.success("Logged out Successfully")
+}
 
   return (
     <>
@@ -26,11 +34,13 @@ const Navbar = ({show, handleModal}:{show: boolean; handleModal: () => void;}) =
                         <li>Help</li>
                     </ul>
                     <div className="md:flex gap-10 hidden ">
-                        <Button onClick={handleModal} className="bg-white border border-[#eb5b39] text-[#eb5b39] font-bold rounded-[50px]" text="Sign up" />
+                        
+                      {user ?  <Button onClick={handleLogout} className="bg-white border border-[#eb5b39] text-[#eb5b39] font-bold rounded-[50px]" text="Logout" /> : <Button onClick={handleModal} className="bg-white border border-[#eb5b39] text-[#eb5b39] font-bold rounded-[50px]" text="Sign up / login" />}
                         <Button className="bg-[#eb5b39] text-white" text="Support us" />
                     </div>
                 </header>
     </>
   );
 };
+
 export default Navbar;
