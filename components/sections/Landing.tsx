@@ -24,7 +24,7 @@ const Landing = () => {
         <>
 
            <PageWrapper>
-                <Navbar show={show} handleModal= {()=>setShow(!show)} />
+                <Navbar  />
 
                 <section className="grid grid-cols-1 xl:grid-cols-2 gap-x-20 gap-y-10 mt-24 xl:mt-44 xl:px-20">
                     <div className="flex flex-col gap-5 mt-10">

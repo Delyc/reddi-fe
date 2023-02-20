@@ -17,6 +17,8 @@ import { toast } from "react-toastify";
 import { useDispatch } from "react-redux";
 import { setUserFirstName } from "@/redux/reducers/UserSignupSlice";
 import { useRouter } from "next/router";
+import Navbar from "../layouts/Navbar";
+import Link from "next/link";
 
 // type Inputs = {
 //     firstName: string,
@@ -82,6 +84,7 @@ const Signup = () => {
 
   const onSubmit = async (e: any) => {
     e.preventDefault();
+    console.log("clicked")
 
     await userSignupFunc("accounts/signup", userSignup)
       .then((res) => {
@@ -101,7 +104,8 @@ const Signup = () => {
   return (
     <>
       <PageWrapper>
-        <SideNavBarWrapper />
+        <Navbar />
+        {/* <SideNavBarWrapper /> */}
         <ContentWrapper className="flex items-center">
           <div className="w-full h-fit flex flex-col items-center gap-5 justify-center">
             <h1>Sign up</h1>
@@ -155,8 +159,9 @@ const Signup = () => {
                 />
               </div>
 
-              <Button type="submit" text="Sign up" onClick={onSubmit} />
+              <Button type="submit" text="Sign up" onClick={onSubmit} className="bg-[#eb5b39] text-white" />
             </form>
+            <p className="text-gray-500">Already have an account? <span className="text-[#eb5b39] font-bold"><Link href="/login">Login</Link></span></p>
           </div>
         </ContentWrapper>
       </PageWrapper>

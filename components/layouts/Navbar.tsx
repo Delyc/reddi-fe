@@ -20,6 +20,15 @@ const handleLogout = () => {
     router.push("/login")
 }
 
+const navLinks = [
+  { href: '/', label: 'Home' },
+  { href: '/about', label: 'About' },
+  { href: '/talents', label: 'Explore Talents' },
+  { href: '/showTalents', label: 'Show your Talents' },
+  { href: '/blog', label: 'Blog' },
+];
+
+
   return (
     <>
       <header className="flex justify-between items-center py-5 w-full fixed z-50 px-6 xl:px-20 bg-white border-b">
@@ -30,12 +39,21 @@ const handleLogout = () => {
 
                     </div>
 
+                    {/* <a className={router.pathname === link.href ? 'active' : ''}>{link.label}</a> */}
+
                     <ul className="md:flex gap-10 hidden ">
-                        <li>Home</li>
+                    {navLinks.map((link) => (
+          <li key={link.href}>
+            {/* <Link href={link.href}> */}
+              <Link href={link.href} className={router.pathname === link.href ? 'text-[#eb5b39] font-bold' : ''}>{link.label}</Link>
+            {/* </Link> */}
+          </li>
+        ))}
+                        {/* <li>Home</li>
                         <li>About</li>
                         <li>Explore Talents</li>
                         <li>Blog</li>
-                        <li>Help</li>
+                        <li>Help</li> */}
                     </ul>
                     <div className="md:flex gap-10 hidden ">
                         

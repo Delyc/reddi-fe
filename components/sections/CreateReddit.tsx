@@ -14,6 +14,7 @@ import { addSubRedditFunc } from "@/utils/functions";
 import getUserToken from "@/utils/getUserToken";
 import { getRedditsOptionsFunc } from "@/utils/functions";
 import { addRedditFunc } from "@/utils/functions";
+import Navbar from "../layouts/Navbar";
 
 const CreateReddit = () => {
   const [token, setToken] = useState("");
@@ -96,7 +97,8 @@ const CreateReddit = () => {
   return (
     <>
       <PageWrapper>
-        <SideNavBarWrapper />
+        {/* <SideNavBarWrapper /> */}
+        <Navbar />
         <ContentWrapper className="flex items-center">
           <div className="form-post">
             {options ? (

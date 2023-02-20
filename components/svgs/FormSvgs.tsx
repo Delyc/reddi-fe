@@ -1,6 +1,6 @@
 interface Props{
     fill: string,
-    classname : string
+    classname : string,
 }
 
 const Email = ({fill, classname} : Props) => {
