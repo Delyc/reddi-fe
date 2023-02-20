@@ -15,10 +15,12 @@ import getUserToken from "@/utils/getUserToken";
 import { getRedditsOptionsFunc } from "@/utils/functions";
 import { addRedditFunc } from "@/utils/functions";
 import Navbar from "../layouts/Navbar";
+import { useRouter } from "next/router";
 
 const CreateReddit = () => {
   const [token, setToken] = useState("");
   const [options, setOptions] = useState<any>();
+  const router = useRouter()
   
   useEffect(() => {
     console.log(getUserToken());
@@ -54,6 +56,8 @@ const CreateReddit = () => {
             authorization: "Bearer " + token,
           // },
         });
+        toast.success("Post added successfully!")
+        router.push("/talents")
         console.log(res.data);
       
       } catch (error) {

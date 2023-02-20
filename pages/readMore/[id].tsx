@@ -74,6 +74,7 @@ const ReadMore = () => {
 
                         <div>
                             <p>{post.title}</p>
+                            <p></p>
                             {/* <Image src={post.image} alt="imahe" width={100} height={100} /> */}
                         </div>
 
