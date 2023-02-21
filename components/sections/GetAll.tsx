@@ -10,7 +10,7 @@ import getUserToken from "../../utils/getUserToken";
 import { SubReddit } from "../../redux/reducers/SubRedditSlice";
 import centerNavItems from "data/centerNavItems";
 
-const GetAll = () => {
+const GetAll = ({whichOne}:any) => {
     const dispatch = useDispatch()
     const [sub, setSub] = useState<any>();
     const [reddits, setRedits] = useState<any>();

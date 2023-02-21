@@ -11,7 +11,7 @@ const centerNavItems: CenterNavItems[] = [
 
     },
     {
-        title: "Music",
+        title: "test",
         path: "/"
 
 
