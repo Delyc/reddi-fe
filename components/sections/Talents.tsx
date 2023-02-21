@@ -23,12 +23,21 @@ const Talents = () => {
     const name = useSelector((state: any) => state.UserSignup.firstName)
     const [whichOne, setWhichOne] = useState<any>("")
     const [isFlipped, setIsflipped] = useState(false);
-    function handleClick() {
+
+    const handleClick = (id: number) => {
         setIsflipped(!isFlipped);
+
+
     }
+
 
     const [sub, setSub] = useState()
     const [redits, setRedits] = useState<any>()
+    const [activeCard, setActiveCard] = useState(-1);
+    const handleCardClick = (index: number) => {
+        setActiveCard(index);
+    };
+
 
 
     useEffect(() => {
@@ -59,60 +68,31 @@ const Talents = () => {
 
 
                 <ContentWrapper>
-                    <div>
-                        <Heading1>Trending Posts</Heading1>
 
-                        <div className=" grid grid-cols-1 xl:grid-cols-4 relative gap-x-10 w-full mt-10">
-                            {/* {posts.map((post: any, index: number) => {
-                                return ( */}
-                            <div className="grid h-64 p-2 bg-white rounded-md w-44 ">
-                               
-                                    { redits ?
-                                    redits.map((redit: any, index: number) => {
-                                        return (
-                                            <>
-                                             <ReactCardFlip isFlipped={isFlipped} flipDirection="horizontal">
-                                            <div
-                                                className="grid w-full h-full gap-2 bg-red-500"
-                                                onMouseEnter={() => handleClick()}
-                                                onMouseLeave={() => handleClick()}
-                                            >
-                                                <Image className="" src={postImage} alt="Post image" width={100} height={100} />
-                                                {/* <img src={image} alt={name} /> */}
-                                                {/* <label className="font-bold">{name}</label> */}
-                                                {/* <label className="">
-        {type.map((el, index) => {
-            return (
-                <span className="mr-1" key={index}>
-                    {el}
-                </span>
-            );
-        })}
-    </label> */}
-                                            </div><div
-                                                className="grid w-full h-full gap-2 bg-gray-200 place-content-center"
-                                                onClick={() => handleClick()}
-                                            >
-                                                    <span className="flex gap-2">
-                                                        <span>HP:</span>
-                                                        {/* <span>{otherSpecs.hp}</span> */}
-                                                    </span>
+                    <Heading1>Trending Posts</Heading1>
+
+                    <div className=" grid grid-cols-1 xl:grid-cols-4  relative gap-x-10 w-full mt-10">
+                        {redits ?
+
+                            redits.map((card: any, index: number) => (
+                                <ReactCardFlip key={index} isFlipped={activeCard === index} flipDirection="horizontal">
+                                    <div className="front" onMouseEnter={() => handleCardClick(index)} onMouseLeave={() => handleCardClick(index)}>
+                                        <h1>Front</h1>
+                                    </div>
+                                    <div className="back" onMouseEnter={() => handleCardClick(index)} onMouseLeave={() => handleCardClick(index)}>
+                                        <h1>Back</h1>
+                                    </div>
+                                </ReactCardFlip>
+                            )) : <h1>Loading</h1>
+                        }
 
 
-                                                </div>
-                                                </ReactCardFlip></>
-
-                                        ) 
-                                    }) : <h1>Loading</h1>
-                                }
-
-                            </div>
 
 
-                            {/* //     )
-                            // })} */}
-                        </div>
+
+
                     </div>
+
 
                     <div>
                         <Heading1>Popular Posts</Heading1>
