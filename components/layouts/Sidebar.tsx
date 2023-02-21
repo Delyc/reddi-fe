@@ -1,4 +1,4 @@
-import sidebarItems from "@/data/sidebarItem";
+import sidebarItems from "../../data/sidebarItem";
 import { useState } from "react";
 const Sidebar = () => {
   const [show, setShow] = useState(null);
