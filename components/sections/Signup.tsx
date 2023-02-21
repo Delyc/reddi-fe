@@ -4,7 +4,6 @@ import ContentWrapper from "../wrappers/ContentWrapper";
 import Input from "../ui/Input";
 import Button from "../ui/Button";
 import Email from "../svgs/FormSvgs";
-import { useForm, SubmitHandler } from "react-hook-form";
 import { useState } from "react";
 import { userSignupFunc } from "utils/functions";
 import {
@@ -90,14 +89,14 @@ const Signup = () => {
       .then((res: any) => {
         e.preventDefault();
 
-        console.log("response", res);
+        console.log("response", res.data.data.email);
         console.log("reg data", userSignup.firstName);
         dispatch(setUserFirstName(userSignup.firstName));
         toast.success("sign up success");
         route.push('/login')
       })
       .catch((err: any) => {
-        console.log("error", err);
+        console.log("error", err.response.data.data.email);
       });
   };
 

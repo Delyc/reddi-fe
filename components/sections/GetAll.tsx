@@ -78,7 +78,7 @@ const GetAll = () => {
                     return (
                         <div key={index} className="mt-10 px-16 bg-white flex flex-col gap-5 py-5">
                             <Link href={`/readMore/${reddit._id}`}>
-                                <p>{reddit.title}</p>
+                                <p className="text-red-500 test">{reddit.title}</p>
                                 <Image className="w-full h-64 object-fill" src={postImage} alt="post image" width={100} height={100} />
                                 <p>{reddit.body}</p>
                             </Link>
