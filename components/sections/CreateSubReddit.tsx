@@ -5,13 +5,10 @@ import Input from "../ui/Input";
 import Button from "../ui/Button";
 import Email from "../svgs/FormSvgs";
 import { useState, useEffect } from "react";
-import { userSignupFunc } from "@/utils/functions";
-import { userLoginFunc } from "@/utils/functions";
 import { toast } from "react-toastify";
 import { useDispatch } from "react-redux";
-import { setUserFirstName } from "@/redux/reducers/UserSignupSlice";
-import { addSubRedditFunc } from "@/utils/functions";
-import getUserToken from "@/utils/getUserToken";
+import { addSubRedditFunc } from "../../utils/functions";
+import getUserToken from "utils/getUserToken";
 
 const CreateSubReddit = () => {
   const [token , setToken] = useState("")
