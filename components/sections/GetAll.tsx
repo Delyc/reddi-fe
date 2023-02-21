@@ -68,25 +68,6 @@ const GetAll = ({ whichOne }: any) => {
     }, []);
 
 
-
-    const [filtered, setFiltered] = useState()
-    const filter = () => {
-        centerNavItems.map((item, index) => {
-
-
-
-
-
-        })
-        // sub.map((reddit: string, index:number) =>{
-        //     console.log("subreddit", reddit)
-
-        // })
-
-    }
-
-    filter()
-
     return (
         <>
             <section className="flex flex-col gap-5">
@@ -94,9 +75,9 @@ const GetAll = ({ whichOne }: any) => {
                     reddits.map((reddit: any, index: number) => {
                         // dispatch(setId(reddit._id))
                         return (
-                            <Link href={`/readMore/${reddit._id}`} className="flex flex-col gap-5 relative">
+                            <Link key={index}  href={`/readMore/${reddit._id}`} className="flex flex-col gap-5 relative">
 
-                                <div key={index} className="mt-10 px-16 bg-white relative py-5">
+                                <div className="mt-10 px-16 bg-white relative py-5">
                                     <p className="text-[#eb5b39] font-semibold text-xl">{reddit.title}</p>
                                     <div className="relative">
                                         <Image className="w-full h-64 object-fill rounded-xl" src={postImage} alt="post image" width={100} height={100} />
