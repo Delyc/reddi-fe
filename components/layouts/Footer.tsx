@@ -3,7 +3,7 @@ import Input from "../ui/Input";
 
 const Footer = () => {
     return ( 
-        <footer className="grid grid-col-1 xl:grid-cols-3 gap-x-20 mt-10 xl:mt-0 py-10 xl:py-20 px-6 bg-[#1d4865] xl:px-40 text-white/80">
+        <footer className="grid grid-col-1 md:grid-cols-3 xl:grid-cols-3 gap-x-10 xl:gap-x-20 mt-10 xl:mt-0 py-10 xl:py-20 px-6 bg-[#1d4865] xl:px-40 text-white/80">
                 <div className="flex flex-col gap-5">
                     <h1 className="text-[35px] text-[#eb5b39] font-bold">BeMyVoice</h1>
                     <p className=" text-[16px] leading-[30px]">Producing, prototyping and testing sketches, high-fidelity wireframes .</p>
@@ -29,7 +29,7 @@ const Footer = () => {
                         <li className=" text-[16px] leading-[30px]">Home</li>
                     </ul>
                 </div>
-                <div>
+                <div className="md:w-[rem]">
                     <h1 className="font-bold text-[20px] text-white mt-5 xl:mt-0 mb-5"> Contact us</h1>
 
                     <form className="flex flex-col gap-3">

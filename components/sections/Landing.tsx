@@ -26,13 +26,13 @@ const Landing = () => {
            <PageWrapper>
                 <Navbar  />
 
-                <section className="grid grid-cols-1 xl:grid-cols-2 gap-x-20 gap-y-10 mt-24 xl:mt-44 xl:px-20">
+                <section className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-2 gap-x-20 gap-y-10 mt-24 md:mt-44 xl:mt-44 xl:px-20">
                     <div className="flex flex-col gap-5 mt-10">
                         <h1 className="text-[40px] xl:text-[55px] font-bold text-[#1d4865]">Want anything to be easy with <span className="text-[#eb5b39]">LaslesVPN</span> .</h1>
                         <p className="text-[#4F5665] text-[16px] leading-[30px]">Provide a network for all your needs with ease and fun using LaslesVPN discover interesting features from us.</p>
                         <Button className="bg-[#eb5b39] text-white w-44 rounded-[5px]" text="Get started" />
                     </div>
-                    <div className="flex xl:justify-center h-[10rem] xl:h-[30rem] ">
+                    <div className="flex md:justify-centerh-[10rem] md:h-[30rem] ">
                         <Image className="w-5/6 object-contain h-full " src={heroImage} alt="hero image" width={100} height={100} />
 
                     </div>
@@ -80,7 +80,7 @@ const Landing = () => {
 
 
 
-                <section className="grid grid-cols-1 xl:grid-cols-2 gap-x-20 xl:px-400">
+                <section className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-2 gap-x-20 xl:px-400">
                     <div className="flex justify-center">
                         <Image className="w-3/5" src={whatwedo} alt="what we do image" width={100} height={100} />
                     </div>
@@ -122,7 +122,7 @@ const Landing = () => {
                     </div>
                 </section>
 
-                <section className="grid grid-cols-1 xl:grid-cols-3 mt-20 xl:mt-44 xl:px-20 gap-x-10 gap-y-5">
+                <section className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 mt-20 xl:mt-44 xl:px-20 gap-x-10 gap-y-5">
                     <h1 className="leading-[50px] text-[50px] font-bold text-[#1d4865]">About us</h1>
                     <div className="flex flex-col gap-5">
                         <Image className="w-14 h-14 rounded-full" src={heroImage} alt="image" width={100} height={100} />
@@ -144,7 +144,7 @@ const Landing = () => {
                 <section className="w-full flex flex-col mt-20 xl:mt-40 gap-10">
                     <h1 className="leading-[50px] text-[50px] font-bold text-[#1d4865]">Check talents</h1>
 
-                    <div className="grid grid-cols-1 xl:grid-cols-4 grid-rows-2 w-full gap-10">
+                    <div className="grid grid-cols-1 md:grid-cols-2  xl:grid-cols-4 grid-rows-2 w-full gap-10">
                         <div className="relative cols-span-1 xl:col-span-3 row-span-1">
 
                             <div className="h-[26vh] relative">
@@ -175,7 +175,7 @@ const Landing = () => {
                                 <Button text="Read more" className="border border-[#eb5b39] text-[#eb5b39]" />
                             </div>
                         </div>
-                        <div className="relative col-span-1 mt-[-160px] xl:mt-0">
+                        <div className="relative col-span-1 mt-[-160px] md:mt-0 xl:mt-0">
                             <div className="relative">
                                 <Image className="w-full rounded-[10px]" src={post3} alt="image" width={100} height={100} />
                                 <div className="absolute bottom-0 left-0 px-10 py-1 bg-slate-200 text-[#1d4865] font-bold">
