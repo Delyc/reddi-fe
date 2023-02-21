@@ -5,17 +5,20 @@ import { useSelector } from "react-redux";
 import Image from "next/image";
 import { commentFunc } from "utils/functions";
 import getUserToken from "utils/getUserToken";
+import Navbar from "@/components/layouts/Navbar";
+import Footer from "@/components/layouts/Footer";
+import PageWrapper from "@/components/wrappers/PageWrapper";
 
 const ReadMore = () => {
-    const [token , setToken] = useState("")
+    const [token, setToken] = useState("")
     const router = useRouter()
     const query = router.query
     const id = query.id;
 
     useEffect(() => {
-      console.log(getUserToken());
-      return setToken(getUserToken());
-  
+        console.log(getUserToken());
+        return setToken(getUserToken());
+
     }, [])
 
 
@@ -63,7 +66,7 @@ const ReadMore = () => {
     };
     const downvote = async (e: any, id: number) => {
         try {
-            const res = await dislikePostFunc(`comments/${id}/down` , {
+            const res = await dislikePostFunc(`comments/${id}/down`, {
                 authorization: "Bearer " + token,
             });
             console.log(res.data);
@@ -78,7 +81,7 @@ const ReadMore = () => {
         e.preventDefault();
 
         await commentFunc(commentUrl, comment, {
-      authorization: "Bearer " + token,
+            authorization: "Bearer " + token,
 
         })
             .then((res) => {
@@ -91,7 +94,10 @@ const ReadMore = () => {
     };
     return (
         <>
-            <div className="more">
+        <PageWrapper >
+
+        <Navbar />
+            <div className="more mt-20">
                 {post ? (
 
 
@@ -118,37 +124,39 @@ const ReadMore = () => {
                         </div>
                         <div className="flex gap-4">
 
-<button
-    onClick={(e) => upvote(e, post._id)}
+                            <button
+                                onClick={(e) => upvote(e, post._id)}
 
-> like ({post?.meta?.upvotes || 0})
-</button>
-<button
-    onClick={(e) => downvote(e, post._id)}
+                            > like ({post?.meta?.upvotes || 0})
+                            </button>
+                            <button
+                                onClick={(e) => downvote(e, post._id)}
 
->
-    dislike ({post?.meta?.downvotes || 0})
-</button>
-<p>Like</p>
-<p>dislike</p>
-<p>Comment</p>
+                            >
+                                dislike ({post?.meta?.downvotes || 0})
+                            </button>
+                            <p>Like</p>
+                            <p>dislike</p>
+                            <p>Comment</p>
 
-</div>
+                        </div>
 
                         <div className="post-com">
                             <h4>commmets</h4>
-                           
+
                             {comments.map((comment: any, index: number) => {
-              return <div key={index} className="comuser"> <p>{comment.body} by <span>{comment.user.firstName}</span>  </p> 
-              
-                </div>;
-            })}
+                                return <div key={index} className="comuser"> <p>{comment.body} by <span>{comment.user.firstName}</span>  </p>
+
+                                </div>;
+                            })}
                         </div>
                     </>
                 ) : (
                     <h1>Loading</h1>
                 )}
             </div>
+            </PageWrapper>
+            <Footer />
         </>
     );
 }

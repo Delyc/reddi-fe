@@ -33,9 +33,9 @@ const Talents = () => {
 
     const [sub, setSub] = useState()
     const [redits, setRedits] = useState<any>()
-    const [activeCard, setActiveCard] = useState(-1);
-    const handleCardClick = (index: number) => {
-        setActiveCard(index);
+    const [activeCard, setActiveCard] = useState(false);
+    const handleCardClick = () => {
+        setActiveCard(!activeCard);
     };
 
 
@@ -72,20 +72,48 @@ const Talents = () => {
                     <Heading1>Trending Posts</Heading1>
 
                     <div className=" grid grid-cols-1 xl:grid-cols-4  relative gap-x-10 w-full mt-10">
-                        {redits ?
-
-                            redits.map((card: any, index: number) => (
-                                <ReactCardFlip key={index} isFlipped={activeCard === index} flipDirection="horizontal">
-                                    <div className="front" onMouseEnter={() => handleCardClick(index)} onMouseLeave={() => handleCardClick(index)}>
-                                        <h1>Front</h1>
+                    <ReactCardFlip  isFlipped={activeCard} flipDirection="horizontal">
+                                    <div className="front" onMouseEnter={() => handleCardClick()} onMouseLeave={() => handleCardClick()}>
+                                        <Image src={postImage} alt="Post image" />
+                                        <h1>Hwllpo</h1>
                                     </div>
-                                    <div className="back" onMouseEnter={() => handleCardClick(index)} onMouseLeave={() => handleCardClick(index)}>
+                                    <div className="back" onClick={()=>handleCardClick}>
                                         <h1>Back</h1>
                                     </div>
                                 </ReactCardFlip>
-                            )) : <h1>Loading</h1>
-                        }
 
+                                <ReactCardFlip  isFlipped={activeCard} flipDirection="horizontal">
+                                    <div className="front" onMouseEnter={() => handleCardClick()} onMouseLeave={() => handleCardClick()}>
+                                        <Image src={postImage} alt="Post image" />
+                                        <h1>Hwllpo</h1>
+                                    </div>
+                                    <div className="back" onClick={()=>handleCardClick}>
+                                        <h1>Back</h1>
+                                    </div>
+                                </ReactCardFlip>
+
+
+                                <ReactCardFlip  isFlipped={activeCard} flipDirection="horizontal">
+                                    <div className="front" onMouseEnter={() => handleCardClick()} onMouseLeave={() => handleCardClick()}>
+                                        <Image src={postImage} alt="Post image" />
+                                        <h1>Hwllpo</h1>
+                                    </div>
+                                    <div className="back" onClick={()=>handleCardClick}>
+                                        <h1>Back</h1>
+                                    </div>
+
+                                </ReactCardFlip>
+
+                                <ReactCardFlip  isFlipped={activeCard} flipDirection="horizontal">
+                                    <div className="front" onMouseEnter={() => handleCardClick()} onMouseLeave={() => handleCardClick()}>
+                                        <Image src={postImage} alt="Post image" />
+                                        <h1>Hwllpo</h1>
+                                    </div>
+                                    <div className="back" onClick={()=>handleCardClick}>
+                                        <h1>Back</h1>
+                                    </div>
+                                </ReactCardFlip>
+                                
 
 
 
