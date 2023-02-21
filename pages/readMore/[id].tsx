@@ -17,6 +17,7 @@ const ReadMore = () => {
     const router = useRouter()
     const query = router.query
     const id = query.id;
+    console.log("post id", id)
 
     useEffect(() => {
         console.log(getUserToken());
@@ -58,10 +59,9 @@ const ReadMore = () => {
 
     const upvote = async (e: any, id: number) => {
         try {
-            const res = await likePostFunc(`comments/${id}/up`, {
+            const res = await likePostFunc(`${commentUrl}/up`, {
                 authorization: "Bearer " + token,
             });
-            console.log(res.data);
             e.target.innerHTML = `voted (${res.data.data.meta.upvotes})`;
         } catch (error) {
             console.log(error);
@@ -89,10 +89,9 @@ const ReadMore = () => {
         })
             .then((res) => {
                 e.preventDefault();
-                console.log(res)
+                toast.success("Comment added successfully)")
             })
             .catch((err) => {
-                console.log("error", err);
                 setError(err.response.data.message)
                 toast.error(`${err.response.data.message} Login again`)
             });
@@ -102,15 +101,15 @@ const ReadMore = () => {
             <PageWrapper >
 
                 <Navbar />
-                <section className="grid grid-cols-3 gap-10 py-20 mt-20">
-                    <div className="col-span-2 ">
+                <section className="grid grid-cols-1 lg:grid-cols-3 lg:gap-20 lg:px-6 xl:grid-cols-3 xl:gap-10 py-12 md:px-20 md:py-20 xl:py-20 mt-20">
+                    <div className="xl:col-span-2 lg:col-span-2">
                         {post ? (
 
 
                             <>
 
-                                <div className="px-20 mx-auto flex flex-col gap-3">
-                                    <Image className="w-full h-[60vh] object-contain rounded-xl" src={postImage} alt="Post image" width={100} height={100} />
+                                <div className="xl:px-20 mx-auto flex flex-col gap-3">
+                                    <Image className="w-full xl:h-[60vh] object-contain rounded-xl" src={postImage} alt="Post image" width={100} height={100} />
                                     <p className="text-xl text-[#eb5b39] font-bold">{post.title}</p>
                                     <p>{post.body}</p>
                                     <p></p>
