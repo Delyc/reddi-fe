@@ -1,6 +1,6 @@
 import { useRouter } from "next/router";
 import { useState, useEffect } from "react";
-import { getOneRedditFunc } from "utils/functions";
+import { dislikePostFunc, getOneRedditFunc, likePostFunc } from "utils/functions";
 import { useSelector } from "react-redux";
 import Image from "next/image";
 import { commentFunc } from "utils/functions";
@@ -50,6 +50,30 @@ const ReadMore = () => {
         setComment({ ...comment, [e.target.name]: e.target.value });
     };
 
+    const upvote = async (e: any, id: number) => {
+        try {
+            const res = await likePostFunc(`comments/${id}/up`, {
+                authorization: "Bearer " + token,
+            });
+            console.log(res.data);
+            e.target.innerHTML = `voted (${res.data.data.meta.upvotes})`;
+        } catch (error) {
+            console.log(error);
+        }
+    };
+    const downvote = async (e: any, id: number) => {
+        try {
+            const res = await dislikePostFunc(`comments/${id}/down` , {
+                authorization: "Bearer " + token,
+            });
+            console.log(res.data);
+            e.target.innerHTML = `downVoted(${res.data.data.meta.downvotes})`;
+        } catch (error) {
+            console.log(error);
+        }
+    };
+
+
     const onSubmit = async (e: any) => {
         e.preventDefault();
 
@@ -92,6 +116,24 @@ const ReadMore = () => {
                                 <button className="comment" type="submit" onClick={onSubmit}>comment</button>
                             </form>
                         </div>
+                        <div className="flex gap-4">
+
+<button
+    onClick={(e) => upvote(e, post._id)}
+
+> like ({post?.meta?.upvotes || 0})
+</button>
+<button
+    onClick={(e) => downvote(e, post._id)}
+
+>
+    dislike ({post?.meta?.downvotes || 0})
+</button>
+<p>Like</p>
+<p>dislike</p>
+<p>Comment</p>
+
+</div>
 
                         <div className="post-com">
                             <h4>commmets</h4>

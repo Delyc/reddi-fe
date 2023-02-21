@@ -8,6 +8,7 @@ import { setId } from "../../redux/reducers/AllPostsSlice";
 import { likePostFunc, dislikePostFunc } from "../../utils/functions";
 import getUserToken from "../../utils/getUserToken";
 import { SubReddit } from "../../redux/reducers/SubRedditSlice";
+import centerNavItems from "data/centerNavItems";
 
 const GetAll = () => {
     const dispatch = useDispatch()
@@ -24,7 +25,7 @@ const GetAll = () => {
     const upvote = async (e: any, id: number) => {
         try {
             const res = await likePostFunc(`comments/${id}/up`, {
-                headers: { authorization: "Bearer " + localStorage.getItem("token") }
+                authorization: "Bearer " + token,
             });
             console.log(res.data);
             e.target.innerHTML = `voted (${res.data.data.meta.upvotes})`;
@@ -35,7 +36,7 @@ const GetAll = () => {
     const downvote = async (e: any, id: number) => {
         try {
             const res = await dislikePostFunc(`comments/${id}/down` , {
-                headers: { authorization: "Bearer " + localStorage.getItem("token") }
+                authorization: "Bearer " + token,
             });
             console.log(res.data);
             e.target.innerHTML = `downVoted(${res.data.data.meta.downvotes})`;
@@ -65,10 +66,26 @@ const GetAll = () => {
         };
         getRedditsSubReddits();
     }, []);
+    
 
 
-    const [posts, setPosts]  = useState()
-    dispatch(SubReddit(posts))
+    const [filtered, setFiltered] = useState()
+    const filter = () => {
+        centerNavItems.map((item, index) => {
+          
+            
+           
+          
+
+        })
+        // sub.map((reddit: string, index:number) =>{
+        //     console.log("subreddit", reddit)
+
+        // })
+
+    }
+
+    filter()
 
     return (
         <>

@@ -13,10 +13,12 @@ import Navbar from "../layouts/Navbar";
 import Footer from "../layouts/Footer";
 import { ReactElement, JSXElementConstructor, ReactFragment, ReactPortal, Key } from "react";
 import { UrlObject } from "url";
+import { useState } from "react";
 
 
 const Talents = () => {
     const name = useSelector((state: any) => state.UserSignup.firstName)
+    const [flip, setFlip] = useState(false)
 
 
     console.log("name", name)
@@ -30,10 +32,11 @@ const Talents = () => {
                 <ContentWrapper>
                     <div>
                         <Heading1>Trending Posts</Heading1>
+         
                         <div className=" grid grid-cols-1 xl:grid-cols-4 relative gap-x-10 w-full mt-10">
                             {posts.map((post: any, index: number) => {
                                 return (
-                                    <div key={index} className="rounded-md  w-[16rem]">
+                                    <div key={index} className="rounded-md  w-[16rem]" onMouseOver={() => console.log("Mouse hover")}>
                                         <Image className="w-full rounded-md h-full object-contain" src={postImage} alt="post image" width={100} height={100} />
                                         {/* <div className="absolute rounded-md  bg-black/40 text-white h-full px-4 top-0 w-[16rem] gap-4 justify-center flex flex-col flex-wrap break-words">
                                             <Heading3 className="font-bold">{post.title}</Heading3>

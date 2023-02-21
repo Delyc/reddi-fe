@@ -28,7 +28,6 @@ const Landing = () => {
 
                 <section className="grid grid-cols-1 xl:grid-cols-2 gap-x-20 gap-y-10 mt-24 xl:mt-44 xl:px-20">
                     <div className="flex flex-col gap-5 mt-10">
-                        <h1 className="text-red-500 font-bold">test</h1>
                         <h1 className="text-[40px] xl:text-[55px] font-bold text-[#1d4865]">Want anything to be easy with <span className="text-[#eb5b39]">LaslesVPN</span> .</h1>
                         <p className="text-[#4F5665] text-[16px] leading-[30px]">Provide a network for all your needs with ease and fun using LaslesVPN discover interesting features from us.</p>
                         <Button className="bg-[#eb5b39] text-white w-44 rounded-[5px]" text="Get started" />
