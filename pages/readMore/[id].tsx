@@ -17,14 +17,11 @@ const ReadMore = () => {
     const router = useRouter()
     const query = router.query
     const id = query.id;
-    console.log("post id", id)
 
     useEffect(() => {
-        console.log(getUserToken());
         return setToken(getUserToken());
 
     }, [])
-
 
     const [post, setPost] = useState<any>([]);
     const [comments, setComments] = useState<any>([]);
@@ -42,10 +39,8 @@ const ReadMore = () => {
         getPost();
     }, []);
 
-    console.log("post", post)
-    console.log("comments", comments)
+
     const commentUrl = `comments/${id}`;
-    console.log("comment url", commentUrl)
 
     const commentMessage = {
         body: ""
@@ -60,7 +55,9 @@ const ReadMore = () => {
     const upvote = async (e: any, id: number) => {
         try {
             const res = await likePostFunc(`${commentUrl}/up`, {
-                authorization: "Bearer " + token,
+                // authorization: "Bearer " + token,
+                headers: { authorization: "Bearer " + token },
+    
             });
             e.target.innerHTML = `voted (${res.data.data.meta.upvotes})`;
         } catch (error) {

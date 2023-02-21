@@ -116,9 +116,7 @@ export async function likePostFunc(
 
 ) {
   let response = await axios.post(
-    `http://localhost:5000/api/v1/${endpoint}`,{
-      headers
-    }
+    `http://localhost:5000/api/v1/${endpoint}`, headers
   );
   return response;
 }
