@@ -1,10 +1,10 @@
 import { useRouter } from "next/router";
 import { useState, useEffect } from "react";
-import { getOneRedditFunc } from "@/utils/functions";
+import { getOneRedditFunc } from "utils/functions";
 import { useSelector } from "react-redux";
 import Image from "next/image";
-import { commentFunc } from "@/utils/functions";
-import getUserToken from "@/utils/getUserToken";
+import { commentFunc } from "utils/functions";
+import getUserToken from "utils/getUserToken";
 
 const ReadMore = () => {
     const id = useSelector((state: any) => state.AllPosts.id)

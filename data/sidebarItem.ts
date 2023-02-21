@@ -1,4 +1,11 @@
-const sidebarItems = [
+
+export interface SidebarItems{
+  id: number,
+  title: string,
+  subTopics: any,
+}
+
+const sidebarItems: SidebarItems[] = [
   {
     id: 1,
     title: "Home",

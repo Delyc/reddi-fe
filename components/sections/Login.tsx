@@ -5,11 +5,11 @@ import Input from "../ui/Input";
 import Button from "../ui/Button";
 import Email from "../svgs/FormSvgs";
 import { useState } from "react";
-import { userSignupFunc } from "@/utils/functions";
-import { userLoginFunc } from "@/utils/functions";
+import { userSignupFunc } from "utils/functions";
+import { userLoginFunc } from "utils/functions";
 import { toast } from "react-toastify";
 import { useDispatch } from "react-redux";
-import { setUserFirstName } from "@/redux/reducers/UserSignupSlice";
+import { setUserFirstName } from "redux/reducers/UserSignupSlice";
 import Navbar from "../layouts/Navbar";
 import { useRouter } from "next/router";
 import { useForm } from "react-hook-form";
@@ -49,7 +49,7 @@ const Login = () => {
     // e.preventDefault();
 
     await userLoginFunc("accounts/login", userLogin)
-      .then((res) => {
+      .then((res: { data: { data: { token: string; }; }; }) => {
         // e.preventDefault();
          localStorage.setItem("user", JSON.stringify(userLogin));
          localStorage.setItem("token", res.data.data.token);
@@ -57,7 +57,7 @@ const Login = () => {
         toast.success("sign up success");
         router.push("/createReddit")
       })
-      .catch((err) => {
+      .catch((err: any) => {
         console.log("error", err);
       });
   };

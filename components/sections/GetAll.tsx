@@ -1,12 +1,13 @@
 import { useState, useEffect } from "react";
-import { getAllRedditsFunc, getSubRedditsFunc } from "@/utils/functions";
+import { getAllRedditsFunc, getSubRedditsFunc } from "../../utils/functions";
 import Image from "next/image";
 import postImage from '../../public/assets/post3.webp'
 import Link from "next/link";
 import { useDispatch } from "react-redux";
-import { setId } from "@/redux/reducers/AllPostsSlice";
-import { likePostFunc, dislikePostFunc } from "@/utils/functions";
-import getUserToken from "@/utils/getUserToken";
+import { setId } from "../../redux/reducers/AllPostsSlice";
+import { likePostFunc, dislikePostFunc } from "../../utils/functions";
+import getUserToken from "../../utils/getUserToken";
+import { SubReddit } from "../../redux/reducers/SubRedditSlice";
 
 const GetAll = () => {
     const dispatch = useDispatch()
@@ -65,6 +66,9 @@ const GetAll = () => {
         getRedditsSubReddits();
     }, []);
 
+
+    const [posts, setPosts]  = useState()
+    dispatch(SubReddit(posts))
 
     return (
         <>

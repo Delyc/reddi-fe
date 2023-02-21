@@ -6,16 +6,16 @@ import Button from "../ui/Button";
 import Email from "../svgs/FormSvgs";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { useState } from "react";
-import { userSignupFunc } from "@/utils/functions";
+import { userSignupFunc } from "utils/functions";
 import {
   validEmail,
   validUsername,
   validPassword,
   validName,
-} from "@/utils/inputValidation";
+} from "utils/inputValidation";
 import { toast } from "react-toastify";
 import { useDispatch } from "react-redux";
-import { setUserFirstName } from "@/redux/reducers/UserSignupSlice";
+import { setUserFirstName } from "redux/reducers/UserSignupSlice";
 import { useRouter } from "next/router";
 import Navbar from "../layouts/Navbar";
 import Link from "next/link";
@@ -87,7 +87,7 @@ const Signup = () => {
     console.log("clicked")
 
     await userSignupFunc("accounts/signup", userSignup)
-      .then((res) => {
+      .then((res: any) => {
         e.preventDefault();
 
         console.log("response", res);
@@ -96,7 +96,7 @@ const Signup = () => {
         toast.success("sign up success");
         route.push('/login')
       })
-      .catch((err) => {
+      .catch((err: any) => {
         console.log("error", err);
       });
   };

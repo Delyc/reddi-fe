@@ -1,6 +1,10 @@
+export interface CenterNavItems{
+    title: string,
+    path: string,
 
+}
 
-const centerNavItems = [
+const centerNavItems: CenterNavItems[] = [
     {
         title: "All Posts",
         path: "/"

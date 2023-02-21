@@ -1,23 +1,18 @@
-import posts from "@/data/posts";
-// import { Heading1, Heading3, Paragraph } from "../ui/Typography";
+import posts from "data/posts";
 import { Heading1, Heading3, Paragraph } from "@/components/ui/Typography";
-// import SideNavBarWrapper from "../wrappers/SideNavBarWrapper";
-import SideNavBarWrapper from "@/components/wrappers/SideNavBarWrapper";
 import Image from "next/image";
 import postImage from '../../public/assets/post3.webp'
-import centerNavItems from "@/data/centerNavItems";
+import centerNavItems from "data/centerNavItems";
 import Link from "next/link";
-// import Button from "../ui/Button";
 import Button from "@/components/ui/Button";
-// import ContentWrapper from "../wrappers/ContentWrapper";
 import ContentWrapper from "@/components/wrappers/ContentWrapper";
-// import PageWrapper from "../wrappers/PageWrapper";
 import PageWrapper from "@/components/wrappers/PageWrapper";
 import { useSelector } from "react-redux"
-// import GetAll from "./GetAll";
 import GetAll from "@/components/sections/GetAll";
 import Navbar from "../layouts/Navbar";
 import Footer from "../layouts/Footer";
+import { ReactElement, JSXElementConstructor, ReactFragment, ReactPortal, Key } from "react";
+import { UrlObject } from "url";
 
 
 const Talents = () => {
@@ -36,7 +31,7 @@ const Talents = () => {
                     <div>
                         <Heading1>Trending Posts</Heading1>
                         <div className=" grid grid-cols-1 xl:grid-cols-4 relative gap-x-10 w-full mt-10">
-                            {posts.map((post, index) => {
+                            {posts.map((post: any, index: number) => {
                                 return (
                                     <div key={index} className="rounded-md  w-[16rem]">
                                         <Image className="w-full rounded-md h-full object-contain" src={postImage} alt="post image" width={100} height={100} />
@@ -57,7 +52,7 @@ const Talents = () => {
                             <div className=" col-span-2">
                                 <div className="bg-white py-6 rounded-md  px-20 border">
                                     <ul className="flex justify-between ">
-                                        {centerNavItems.map((centerNavItem, index) => {
+                                        {centerNavItems.map((centerNavItem: { path: string | UrlObject; title: string | number | boolean | ReactElement<any, string | JSXElementConstructor<any>> | ReactFragment | ReactPortal | null | undefined; }, index: Key | null | undefined) => {
                                             return (
                                                 <Link href={centerNavItem.path} key={index}>{centerNavItem.title}</Link>
 

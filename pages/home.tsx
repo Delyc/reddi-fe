@@ -1,11 +1,11 @@
-import posts from "@/data/posts";
-// import { Heading1, Heading3, Paragraph } from "../ui/Typography";
+
+import posts from "data/posts";// import { Heading1, Heading3, Paragraph } from "../ui/Typography";
 import { Heading1, Heading3, Paragraph } from "@/components/ui/Typography";
 // import SideNavBarWrapper from "../wrappers/SideNavBarWrapper";
 import SideNavBarWrapper from "@/components/wrappers/SideNavBarWrapper";
 import Image from "next/image";
 import postImage from '../public/assets/post3.webp'
-import centerNavItems from "@/data/centerNavItems";
+import centerNavItems from "data/centerNavItems";
 import Link from "next/link";
 // import Button from "../ui/Button";
 import Button from "@/components/ui/Button";

@@ -1,6 +1,13 @@
 
+export interface Posts{
+  title: string,
+  image: string,
+  hook: string,
+  description: string,
 
-const posts = [
+}
+
+const posts: Posts[] = [
     {
       image : "/assets/post.jpeg",
       title: "Nikki Haley",
