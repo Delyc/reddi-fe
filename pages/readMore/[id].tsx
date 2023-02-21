@@ -104,8 +104,8 @@ const ReadMore = () => {
                         {post ? (
                             <>
                                 <div className="xl:px-20 mx-auto flex flex-col gap-3">
-                                    <Image className="w-full xl:h-[60vh] object-contain rounded-xl" src={postImage} alt="Post image" width={100} height={100} />
-                                    <p className="text-xl text-[#eb5b39] font-bold">{post.title}</p>
+                                    <Image className="w-full xl:h-60 object-contain rounded-xl" src={postImage} alt="Post image" width={100} height={100} />
+                                    <p className="text-xl text-primary-orange font-bold">{post.title}</p>
                                     <p>{post.body}</p>
                                     <div className="flex gap-4">
                                         <button
@@ -136,12 +136,12 @@ const ReadMore = () => {
                                     rows={5}
                                     onChange={inputHandler}
                                 ></textarea>
-                                <button className="comment bg-[#eb5b39] text-white font-semibold rounded py-2 px-5 w-36" type="submit" onClick={onSubmit}>comment</button>
+                                <button className="comment bg-primary-orange text-white font-semibold rounded py-2 px-5 w-36" type="submit" onClick={onSubmit}>comment</button>
                             </form>
                         </div>
                         <div className="mt-10">
                             {comments.map((comment: any, index: number) => {
-                                return <div key={index} className="comuser"> <p>{comment.body} by <span className="text-[#eb5b39] font-bold">{comment.user.firstName}</span>  </p>
+                                return <div key={index} className="comuser"> <p>{comment.body} by <span className="text-primary-orange font-bold">{comment.user.firstName}</span>  </p>
                                 </div>;
                             })}
                         </div>
