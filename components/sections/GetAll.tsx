@@ -74,7 +74,7 @@ const GetAll = () => {
         <>
             {reddits ?
                 reddits.map((reddit: any, index: number) => {
-                    dispatch(setId(reddit._id))
+                    // dispatch(setId(reddit._id))
                     return (
                         <div key={index} className="mt-10 px-16 bg-white flex flex-col gap-5 py-5">
                             <Link href={`/readMore/${reddit._id}`}>

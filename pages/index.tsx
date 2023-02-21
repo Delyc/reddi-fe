@@ -1,4 +1,3 @@
-import { Inter } from "@next/font/google";
 import Landing from "@/components/sections/Landing";
 
 

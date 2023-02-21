@@ -7,8 +7,10 @@ import { commentFunc } from "utils/functions";
 import getUserToken from "utils/getUserToken";
 
 const ReadMore = () => {
-    const id = useSelector((state: any) => state.AllPosts.id)
     const [token , setToken] = useState("")
+    const router = useRouter()
+    const query = router.query
+    const id = query.id;
 
     useEffect(() => {
       console.log(getUserToken());
@@ -28,7 +30,6 @@ const ReadMore = () => {
                 setComments(res.data.data.comments);
             } catch (error) {
                 console.log(error);
-                //   setErr(error?.response?.data?.errors || error.message)
             }
         };
         getPost();
