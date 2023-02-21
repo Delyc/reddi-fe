@@ -124,8 +124,8 @@ const Talents = () => {
 
                     <div>
                         <Heading1>Popular Posts</Heading1>
-                        <div className="grid grid-cols-3 w-full gap-x-10 mt-5">
-                            <div className=" col-span-2">
+                        <div className="grid xl:grid-cols-3 w-full gap-x-10 mt-5">
+                            <div className=" xl:col-span-2 ">
                                 <div className="bg-white py-6 rounded-md  px-20 border">
                                     <ul className="flex justify-between ">
                                         {centerNavItems.map((centerNavItem: { path: string | UrlObject; title: string | number | boolean | ReactElement<any, string | JSXElementConstructor<any>> | ReactFragment | ReactPortal | null | undefined; }, index: Key | null | undefined) => {

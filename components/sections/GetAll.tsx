@@ -70,14 +70,14 @@ const GetAll = ({ whichOne }: any) => {
 
     return (
         <>
-            <section className="flex flex-col gap-5">
+            <section className="flex flex-col gap-5 pr-6">
                 {reddits ?
                     reddits.map((reddit: any, index: number) => {
                         // dispatch(setId(reddit._id))
                         return (
                             <Link key={index}  href={`/readMore/${reddit._id}`} className="flex flex-col gap-5 relative">
 
-                                <div className="mt-10 px-16 bg-white relative py-5">
+                                <div className="mt-10 xl:px-16 bg-white relative py-5">
                                     <p className="text-[#eb5b39] font-semibold text-xl">{reddit.title}</p>
                                     <div className="relative">
                                         <Image className="w-full h-64 object-fill rounded-xl" src={postImage} alt="post image" width={100} height={100} />
