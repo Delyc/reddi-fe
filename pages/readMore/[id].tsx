@@ -127,7 +127,7 @@ const ReadMore = () => {
                     </div>
                     <div className="post-com">
                         <div className="flex flex-col gap-3">
-                            <h1>What's on your mind ?!</h1>
+                            <h1>What{"'"}s on your mind ?!</h1>
                             <form action="" className="flex flex-col gap-3" >
                                 <textarea
                                     className="form-control border py-5 px-5 shadow rounded-lg outline-none"
