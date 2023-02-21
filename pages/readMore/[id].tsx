@@ -9,9 +9,11 @@ import Navbar from "@/components/layouts/Navbar";
 import Footer from "@/components/layouts/Footer";
 import PageWrapper from "@/components/wrappers/PageWrapper";
 import postImage from '../../public/assets/post3.webp'
+import { toast } from "react-toastify";
 
 const ReadMore = () => {
     const [token, setToken] = useState("")
+    const [error, setError] = useState()
     const router = useRouter()
     const query = router.query
     const id = query.id;
@@ -91,6 +93,8 @@ const ReadMore = () => {
             })
             .catch((err) => {
                 console.log("error", err);
+                setError(err.response.data.message)
+                toast.error(`${err.response.data.message} Login again`)
             });
     };
     return (
