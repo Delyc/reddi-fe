@@ -7,47 +7,16 @@ import { useDispatch } from "react-redux";
 import { setId } from "../../redux/reducers/AllPostsSlice";
 import { likePostFunc, dislikePostFunc } from "../../utils/functions";
 import getUserToken from "../../utils/getUserToken";
-import { SubReddit } from "../../redux/reducers/SubRedditSlice";
-import centerNavItems from "data/centerNavItems";
 
-const GetAll = ({ whichOne }: any) => {
-    const dispatch = useDispatch()
+const GetAll = () => {
     const [sub, setSub] = useState<any>();
     const [reddits, setRedits] = useState<any>();
     const [token, setToken] = useState("")
 
     useEffect(() => {
-        console.log(getUserToken());
         return setToken(getUserToken());
 
     }, [])
-
-    const upvote = async (e: any, id: number) => {
-        try {
-            const res = await likePostFunc(`comments/${id}/up`, {
-                authorization: "Bearer " + token,
-            });
-            console.log(res.data);
-            e.target.innerHTML = `voted (${res.data.data.meta.upvotes})`;
-        } catch (error) {
-            console.log(error);
-        }
-    };
-    const downvote = async (e: any, id: number) => {
-        try {
-            const res = await dislikePostFunc(`comments/${id}/down`, {
-                authorization: "Bearer " + token,
-            });
-            console.log(res.data);
-            e.target.innerHTML = `downVoted(${res.data.data.meta.downvotes})`;
-        } catch (error) {
-            console.log(error);
-        }
-    };
-
-
-
-
 
     useEffect(() => {
         const getRedditsSubReddits = async () => {
@@ -58,8 +27,6 @@ const GetAll = ({ whichOne }: any) => {
                 const res2 = await getAllRedditsFunc("reddits/all");
                 setSub(res.data.data.reddits);
                 setRedits(res2.data.data.reddits);
-                console.log("sub", res2.data.data.reddits);
-                console.log("sub", res.data.data.reddits);
             } catch (error) {
                 console.log(error);
             }
@@ -73,19 +40,15 @@ const GetAll = ({ whichOne }: any) => {
             <section className="flex flex-col gap-5 pr-6">
                 {reddits ?
                     reddits.map((reddit: any, index: number) => {
-                        // dispatch(setId(reddit._id))
                         return (
-                            <Link key={index}  href={`/readMore/${reddit._id}`} className="flex flex-col gap-5 relative">
-
+                            <Link key={index} href={`/readMore/${reddit._id}`} className="flex flex-col gap-5 relative">
                                 <div className="mt-10 xl:px-16 bg-white relative py-5">
                                     <p className="text-[#eb5b39] font-semibold text-xl">{reddit.title}</p>
                                     <div className="relative">
                                         <Image className="w-full h-64 object-fill rounded-xl" src={postImage} alt="post image" width={100} height={100} />
                                         {sub.map((sub: any, index: number) => {
                                             return (
-
                                                 <p className="absolute px-5 text-white font-bold py-1 flex justify-center w-24 bg-black/50 top-0 right-0" key={index}>{sub._id === reddit.subreddit ? sub.title : ""}</p>
-                                                // <div>hello {sub._id}</div>
                                             )
                                         })}
                                     </div>
@@ -101,18 +64,13 @@ const GetAll = ({ whichOne }: any) => {
                                             <path opacity="0.4" d="M11 16.15V18.85C11 21.1 10.1 22 7.85 22H5.15C2.9 22 2 21.1 2 18.85V16.15C2 13.9 2.9 13 5.15 13H7.85C10.1 13 11 13.9 11 16.15Z" stroke="#eb5b39" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
                                         </svg>
                                     </div>
-
-
-
                                 </div>
                             </Link>
-
                         )
 
                     }) : <h1>Loading</h1>
 
                 }
-
             </section>
         </>
     );

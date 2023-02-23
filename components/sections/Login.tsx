@@ -1,22 +1,19 @@
-import SideNavBarWrapper from "../wrappers/SideNavBarWrapper";
 import PageWrapper from "../wrappers/PageWrapper";
 import ContentWrapper from "../wrappers/ContentWrapper";
 import Input from "../ui/Input";
 import Button from "../ui/Button";
 import Email from "../svgs/FormSvgs";
 import { useState } from "react";
-import { userSignupFunc } from "utils/functions";
 import { userLoginFunc } from "utils/functions";
 import { toast } from "react-toastify";
 import { useDispatch } from "react-redux";
-import { setUserFirstName } from "redux/reducers/UserSignupSlice";
 import Navbar from "../layouts/Navbar";
 import { useRouter } from "next/router";
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
+import Link from "next/link";
 
 type FormData = {
-  // name: string;
   username: string;
   password: string;
 };
@@ -24,7 +21,6 @@ type FormData = {
 const Login = () => {
   
   const schema = yup.object().shape({
-    // name: yup.string().required(),
     username: yup.string().email().required(),
     password: yup.string().min(6).required(),
   });
@@ -41,19 +37,13 @@ const Login = () => {
     setUserLogin({ ...userLogin, [e.target.name]: e.target.value });
   };
 
-  const dispatch = useDispatch();
   const router = useRouter()
 
   const onSubmit = async (data: FormData) => {
-    console.log("data")
-    // e.preventDefault();
-
     await userLoginFunc("accounts/login", userLogin)
       .then((res: { data: { data: { token: string; }; }; }) => {
-        // e.preventDefault();
          localStorage.setItem("user", JSON.stringify(userLogin));
          localStorage.setItem("token", res.data.data.token);
-        // dispatch(setUserFirstName(userSignup.firstName));
         toast.success("sign up success");
         router.push("/createReddit")
       })
@@ -70,7 +60,6 @@ const Login = () => {
           <div className="w-full h-fit flex flex-col items-center gap-5 justify-center">
             <h1>Login</h1>
             <form className="flex flex-col gap-5 w-2/5" onSubmit={handleSubmit(onSubmit)}>
-      
               <div className="flex relative items-center w-full">
                 <Email classname="absolute left-5" fill="#ffffff" />
                 <Input
@@ -94,10 +83,9 @@ const Login = () => {
                 />
                 {errors.password && <p>{errors.password.message}</p>}
               </div>
-
-
-              <Button type="submit" text="Login"  />
+              <Button type="submit" text="Login" className="bg-primary-orange text-white" />
             </form>
+            <p>Don't have an account? <span className="text-primary-orange font-bold"><Link href="/signup">Sign up</Link></span> here!</p>
           </div>
         </ContentWrapper>
       </PageWrapper>
