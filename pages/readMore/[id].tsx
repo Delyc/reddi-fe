@@ -11,7 +11,6 @@ import postImage from '../../public/assets/post3.webp'
 import { toast } from "react-toastify";
 
 const ReadMore = () => {
-
     //all needed states
     const [token, setToken] = useState("")
     const [error, setError] = useState()
@@ -57,29 +56,6 @@ const ReadMore = () => {
         setComment({ ...comment, [e.target.name]: e.target.value });
     };
 
-    const upvote = async (e: any, id: number) => {
-        try {
-            const res = await likePostFunc(`${commentUrl}/up`, {
-                authorization: "Bearer " + token,
-            });
-            e.target.innerHTML = `voted (${res.data.data.meta.upvotes})`;
-        } catch (error) {
-            console.log(error);
-        }
-    };
-
-    const downvote = async (e: any, id: number) => {
-        try {
-            const res = await dislikePostFunc(`comments/${id}/down`, {
-                authorization: "Bearer " + token,
-            });
-            e.target.innerHTML = `downVoted(${res.data.data.meta.downvotes})`;
-        } catch (error) {
-            console.log(error);
-        }
-    };
-
-
     const onSubmit = async (e: any) => {
         e.preventDefault();
         await commentFunc(commentUrl, comment, {
@@ -107,22 +83,12 @@ const ReadMore = () => {
                                     <Image className="w-full xl:h-60 object-contain rounded-xl" src={postImage} alt="Post image" width={100} height={100} />
                                     <p className="text-xl text-primary-orange font-bold">{post.title}</p>
                                     <p>{post.body}</p>
-                                    <div className="flex gap-4">
-                                        <button
-                                            onClick={(e) => upvote(e, post._id)}
-                                        >
-                                            like ({post?.meta?.upvotes || 0})
-                                        </button>
-                                        <button
-                                            onClick={(e) => downvote(e, post._id)}
-                                        >
-                                            dislike ({post?.meta?.downvotes || 0})
-                                        </button>
-                                    </div>
                                 </div>
                             </>
                         ) : (
-                            <h1>Loading</h1>
+                            <div className="w-full flex justify-center">
+                                <h1>Loading ...</h1>
+                            </div>
                         )}
                     </div>
                     <div className="post-com">

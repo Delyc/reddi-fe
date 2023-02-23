@@ -22,7 +22,6 @@ const handleLogout = () => {
 
 const navLinks = [
   { href: '/', label: 'Home' },
-  { href: '/about', label: 'About' },
   { href: '/talents', label: 'Explore Talents' },
   { href: '/showTalents', label: 'Show your Talents' },
 ];

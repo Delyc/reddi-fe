@@ -16,6 +16,8 @@ import { useState } from "react";
 import ReactCardFlip from "react-card-flip";
 import { getAllRedditsFunc, getSubRedditsFunc } from "utils/functions";
 import postImage from '../../public/assets/post3.webp'
+import categories from "data/categories";
+import FlipCard from "../cards/FlipCard";
 
 
 
@@ -72,47 +74,18 @@ const Talents = () => {
                     <Heading1>Trending Posts</Heading1>
 
                     <div className=" grid grid-cols-1 xl:grid-cols-4  relative gap-x-10 w-full mt-10">
-                    <ReactCardFlip  isFlipped={activeCard} flipDirection="horizontal">
-                                    <div className="front" onMouseEnter={() => handleCardClick()} onMouseLeave={() => handleCardClick()}>
-                                        <Image src={postImage} alt="Post image" />
-                                        <h1>Hwllpo</h1>
-                                    </div>
-                                    <div className="back" onClick={()=>handleCardClick}>
-                                        <h1>Back</h1>
-                                    </div>
-                                </ReactCardFlip>
+                   
 
-                                <ReactCardFlip  isFlipped={activeCard} flipDirection="horizontal">
-                                    <div className="front" onMouseEnter={() => handleCardClick()} onMouseLeave={() => handleCardClick()}>
-                                        <Image src={postImage} alt="Post image" />
-                                        <h1>Hwllpo</h1>
-                                    </div>
-                                    <div className="back" onClick={()=>handleCardClick}>
-                                        <h1>Back</h1>
-                                    </div>
-                                </ReactCardFlip>
+                               
 
 
-                                <ReactCardFlip  isFlipped={activeCard} flipDirection="horizontal">
-                                    <div className="front" onMouseEnter={() => handleCardClick()} onMouseLeave={() => handleCardClick()}>
-                                        <Image src={postImage} alt="Post image" />
-                                        <h1>Hwllpo</h1>
-                                    </div>
-                                    <div className="back" onClick={()=>handleCardClick}>
-                                        <h1>Back</h1>
-                                    </div>
+                               
 
-                                </ReactCardFlip>
-
-                                <ReactCardFlip  isFlipped={activeCard} flipDirection="horizontal">
-                                    <div className="front" onMouseEnter={() => handleCardClick()} onMouseLeave={() => handleCardClick()}>
-                                        <Image src={postImage} alt="Post image" />
-                                        <h1>Hwllpo</h1>
-                                    </div>
-                                    <div className="back" onClick={()=>handleCardClick}>
-                                        <h1>Back</h1>
-                                    </div>
-                                </ReactCardFlip>
+                               {categories.map((category, index)=> {
+                                return(
+                                    <FlipCard image={category.image} backText={category.backText} />
+                                )
+                               })}
                                 
 
 
@@ -154,11 +127,7 @@ const Talents = () => {
 
                             </div> */}
                         </div>
-                        <div className=" flex justify-end bottom-10 sticky mr-0">
-                            <Button text="Back to top" className=" rounded-full" />
-
-                        </div>
-
+         
 
                     </div>
                 </ContentWrapper>
