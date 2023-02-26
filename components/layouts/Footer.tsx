@@ -3,9 +3,9 @@ import Input from "../ui/Input";
 
 const Footer = () => {
     return ( 
-        <footer className="grid grid-col-1 md:grid-cols-3 xl:grid-cols-3 gap-x-10 xl:gap-x-20 mt-10 xl:mt-0 py-10 xl:py-20 px-6 bg-[#1d4865] xl:px-40 text-white/80">
+        <footer className="grid grid-col-1 md:grid-cols-3 xl:grid-cols-3 gap-x-10 xl:gap-x-20 mt-10 xl:mt-0 py-10 xl:py-20 px-6 bg-primary-blue xl:px-40 text-white/80">
                 <div className="flex flex-col gap-5">
-                    <h1 className="text-[35px] text-[#eb5b39] font-bold">BeMyVoice</h1>
+                    <h1 className="text-[35px] text-primary-orange font-bold">BeMyVoice</h1>
                     <p className=" text-[16px] leading-[30px]">Producing, prototyping and testing sketches, high-fidelity wireframes .</p>
                     <div className="flex gap-3">
                         <svg width="34" height="35" viewBox="0 0 34 35" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -36,7 +36,7 @@ const Footer = () => {
                         <Input placeholder="Names" />
                         <Input placeholder="Email" />
                         <Input className="h-32" placeholder="Message" />
-                        <Button className="bg-[#eb5b39] rounded-[3px]" text="Send" />
+                        <Button className="bg-primary-orange rounded-[3px]" text="Send" />
                     </form>
                 </div>
             </footer>
