@@ -3,9 +3,6 @@ import { getAllRedditsFunc, getSubRedditsFunc } from "../../utils/functions";
 import Image from "next/image";
 import postImage from '../../public/assets/post3.webp'
 import Link from "next/link";
-import { useDispatch } from "react-redux";
-import { setId } from "../../redux/reducers/AllPostsSlice";
-import { likePostFunc, dislikePostFunc } from "../../utils/functions";
 import getUserToken from "../../utils/getUserToken";
 
 const GetAll = () => {
@@ -43,7 +40,7 @@ const GetAll = () => {
                         return (
                             <Link key={index} href={`/readMore/${reddit._id}`} className="flex flex-col gap-5 relative">
                                 <div className="mt-10 xl:px-16 bg-white relative py-5">
-                                    <p className="text-[#eb5b39] font-semibold text-xl">{reddit.title}</p>
+                                    <p className="text-primary-orange font-semibold text-xl">{reddit.title}</p>
                                     <div className="relative">
                                         <Image className="w-full h-64 object-fill rounded-xl" src={postImage} alt="post image" width={100} height={100} />
                                         {sub.map((sub: any, index: number) => {
@@ -52,9 +49,9 @@ const GetAll = () => {
                                             )
                                         })}
                                     </div>
-                                    <p className="text-[#1d4865] text-lg  leading-[30px]">{reddit.body} <span></span></p>
+                                    <p className="text-primary-blue text-lg  leading-[30px]">{reddit.body} <span></span></p>
                                     <div className="flex gap-2 items-center">
-                                        <p className="text-[#eb5b39]">Read More</p>
+                                        <p className="text-primary-orange">Read More</p>
                                         <svg className="w-8 h-8" width="800px" height="800px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <path d="M2 9.98V9C2 4 4 2 9 2H15C20 2 22 4 22 9V15C22 20 20 22 15 22H14" stroke="#eb5b39" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
                                             <g opacity="0.4">
