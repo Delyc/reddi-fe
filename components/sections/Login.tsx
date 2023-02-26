@@ -6,7 +6,6 @@ import Email from "../svgs/FormSvgs";
 import { useState } from "react";
 import { userLoginFunc } from "utils/functions";
 import { toast } from "react-toastify";
-import { useDispatch } from "react-redux";
 import Navbar from "../layouts/Navbar";
 import { useRouter } from "next/router";
 import { useForm } from "react-hook-form";
@@ -64,7 +63,7 @@ const Login = () => {
                 <Email classname="absolute left-5" fill="#ffffff" />
                 <Input
                   className="w-full px-14"
-                  placeholder="User name"
+                  placeholder="Username"
                   name="username"
                   onChange={inputHandler}
                   ref={register("username")}
