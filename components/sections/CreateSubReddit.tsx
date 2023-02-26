@@ -14,9 +14,7 @@ const CreateSubReddit = () => {
   const [token , setToken] = useState("")
 
   useEffect(() => {
-    console.log(getUserToken());
     return setToken(getUserToken());
-
   }, [])
 
   const subRedditData = {
@@ -39,8 +37,6 @@ const CreateSubReddit = () => {
     })
       .then((res) => {
         e.preventDefault();
-
-        // dispatch(setUserFirstName(userSignup.firstName));
         toast.success("sign up success");
       })
       .catch((err) => {
