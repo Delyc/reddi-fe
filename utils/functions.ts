@@ -3,7 +3,7 @@ import axios from "axios";
 
 export async function userSignupFunc(endpoint: string, body: any) {
   let response = await axios.post(
-    `http://localhost:5000/api/v1/${endpoint}`,
+    `https://reddi-be-production.up.railway.app/api/v1/${endpoint}`,
     body
   );
   return response;
@@ -11,7 +11,7 @@ export async function userSignupFunc(endpoint: string, body: any) {
 
 export async function userLoginFunc(endpoint: string, body: any) {
   let response = await axios.post(
-    `http://localhost:5000/api/v1/${endpoint}`,
+    `https://reddi-be-production.up.railway.app/api/v1/${endpoint}`,
     body
   );
   return response;
@@ -23,7 +23,7 @@ export async function addSubRedditFunc(
   headers: any
 ) {
   let response = await axios.post(
-    `http://localhost:5000/api/v1/${endpoint}`,
+    `https://reddi-be-production.up.railway.app/api/v1/${endpoint}`,
     body,
     {
       headers,
@@ -37,7 +37,7 @@ export async function getRedditsOptionsFunc(
   headers: any
 ) {
   let response = await axios.get(
-    `http://localhost:5000/api/v1/${endpoint}`,
+    `https://reddi-be-production.up.railway.app/api/v1/${endpoint}`,
     {
       headers,
     }
@@ -52,7 +52,7 @@ export async function addRedditFunc(
   headers: any
 ) {
   let response = await axios.post(
-    `http://localhost:5000/api/v1/${endpoint}`,
+    `https://reddi-be-production.up.railway.app/api/v1/${endpoint}`,
     body,
     {
       headers,
@@ -67,7 +67,7 @@ export async function getAllRedditsFunc(
   endpoint: string,
 ) {
   let response = await axios.get(
-    `http://localhost:5000/api/v1/${endpoint}`,
+    `https://reddi-be-production.up.railway.app/api/v1/${endpoint}`,
   );
   return response;
 }
@@ -78,7 +78,7 @@ export async function getSubRedditsFunc(
   headers: any
 ) {
   let response = await axios.get(
-    `http://localhost:5000/api/v1/${endpoint}`,
+    `https://reddi-be-production.up.railway.app/api/v1/${endpoint}`,
     {
       headers,
     }
@@ -91,7 +91,7 @@ export async function getOneRedditFunc(
   endpoint: string,
 ) {
   let response = await axios.get(
-    `http://localhost:5000/api/v1/${endpoint}`,
+    `https://reddi-be-production.up.railway.app/api/v1/${endpoint}`,
   );
   return response;
 }
@@ -102,7 +102,7 @@ export async function commentFunc(
   headers : any
 ) {
   let response = await axios.post(
-    `http://localhost:5000/api/v1/${endpoint}`, body, {
+    `https://reddi-be-production.up.railway.app/api/v1/${endpoint}`, body, {
       headers,
     }
   );
@@ -116,7 +116,7 @@ export async function likePostFunc(
 
 ) {
   let response = await axios.post(
-    `http://localhost:5000/api/v1/${endpoint}`, headers
+    `https://reddi-be-production.up.railway.app/api/v1/${endpoint}`, headers
   );
   return response;
 }
@@ -127,7 +127,7 @@ export async function dislikePostFunc(
   headers: any
 ) {
   let response = await axios.post(
-    `http://localhost:5000/api/v1/${endpoint}`,{
+    `https://reddi-be-production.up.railway.app/api/v1/${endpoint}`,{
       headers
     }
   );
