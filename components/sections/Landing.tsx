@@ -17,6 +17,8 @@ import PageWrapper from "../wrappers/PageWrapper";
 import Footer from "../layouts/Footer";
 import Hero from "./Hero";
 import Stats from "./Stats";
+import WhatWeDo from "./WhatWeDo";
+import AboutUs from "./AboutUs";
 
 const Landing = () => {
     return (
@@ -27,69 +29,15 @@ const Landing = () => {
                 <Hero />
                 <Stats />
                
-
+<WhatWeDo />
                 
 
 
 
 
-                <section className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-2 gap-x-20 xl:px-400">
-                    <div className="flex justify-center">
-                        <Image className="w-3/5" src={whatwedo} alt="what we do image" width={100} height={100} />
-                    </div>
-                    <div >
-                        <div className="xl:w-3/5 flex flex-col gap-5">
-                            <h1 className="leading-[50px] text-[35px] font-bold text-primary-blue">We Provide Many Features You Can Use</h1>
-                            <p className="text-primary-gray text-[16px] leading-[30px]">Provide a network for all your needs with ease and fun using LaslesVPN discover interesting features from us.</p>
-                            <div className="flex flex-col gap-3">
-                                <div className="flex gap-4 items-center">
-                                    <div>
-                                        <svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M10.1215 0.549316C4.60746 0.549316 0.12146 5.03532 0.12146 10.5493C0.12146 16.0633 4.60746 20.5493 10.1215 20.5493C15.6355 20.5493 20.1215 16.0633 20.1215 10.5493C20.1215 5.03532 15.6355 0.549316 10.1215 0.549316ZM8.12246 14.9623L5.11691 11.9632C4.72616 11.5733 4.72537 10.9405 5.11515 10.5496C5.50517 10.1585 6.13847 10.1578 6.52939 10.548L8.12046 12.1363L12.7075 7.54932C13.0979 7.15885 13.731 7.15885 14.1215 7.54932C14.5119 7.93978 14.5119 8.57285 14.1215 8.96332L8.12246 14.9623Z" fill="#2FAB73" />
-                                        </svg>
+               
 
-                                    </div>
-                                    <p className="text-primary-gray text-[16px] leading-[30px]">Powerfull online protection.</p>
-                                </div>
-                                <div className="flex gap-4 items-center">
-                                    <div>
-                                        <svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M10.1215 0.549316C4.60746 0.549316 0.12146 5.03532 0.12146 10.5493C0.12146 16.0633 4.60746 20.5493 10.1215 20.5493C15.6355 20.5493 20.1215 16.0633 20.1215 10.5493C20.1215 5.03532 15.6355 0.549316 10.1215 0.549316ZM8.12246 14.9623L5.11691 11.9632C4.72616 11.5733 4.72537 10.9405 5.11515 10.5496C5.50517 10.1585 6.13847 10.1578 6.52939 10.548L8.12046 12.1363L12.7075 7.54932C13.0979 7.15885 13.731 7.15885 14.1215 7.54932C14.5119 7.93978 14.5119 8.57285 14.1215 8.96332L8.12246 14.9623Z" fill="#2FAB73" />
-                                        </svg>
-
-                                    </div>
-                                    <p className="text-primary-gray text-[16px] leading-[30px]">Powerfull online protection.</p>
-                                </div>
-                                <div className="flex gap-4 items-center">
-                                    <div>
-                                        <svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M10.1215 0.549316C4.60746 0.549316 0.12146 5.03532 0.12146 10.5493C0.12146 16.0633 4.60746 20.5493 10.1215 20.5493C15.6355 20.5493 20.1215 16.0633 20.1215 10.5493C20.1215 5.03532 15.6355 0.549316 10.1215 0.549316ZM8.12246 14.9623L5.11691 11.9632C4.72616 11.5733 4.72537 10.9405 5.11515 10.5496C5.50517 10.1585 6.13847 10.1578 6.52939 10.548L8.12046 12.1363L12.7075 7.54932C13.0979 7.15885 13.731 7.15885 14.1215 7.54932C14.5119 7.93978 14.5119 8.57285 14.1215 8.96332L8.12246 14.9623Z" fill="#2FAB73" />
-                                        </svg>
-
-                                    </div>
-                                    <p className="text-primary-gray text-[16px] leading-[30px]">Powerfull online protection.</p>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                <section className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 mt-20 xl:mt-44 xl:px-20 gap-x-10 gap-y-5">
-                    <h1 className="leading-[50px] text-[50px] font-bold text-primary-blue">About us</h1>
-                    <div className="flex flex-col gap-5">
-                        <Image className="w-14 h-14 rounded-full" src={heroImage} alt="image" width={100} height={100} />
-                        <h1 className="leading-[50px] text-[35px] font-bold text-primary-blue">Our Missiom</h1>
-                        <p className="text-primary-gray text-[16px] leading-[30px]">Producing, prototyping and testing sketches, high-fidelity wireframes and the final UI is a process that results in intuitive and impactful design that{"'"}s easy on the eyes.</p>
-
-                    </div>
-                    <div className="flex flex-col gap-5">
-                        <Image className="w-14 h-14 rounded-full" src={heroImage} alt="image" width={100} height={100} />
-                        <h1 className="leading-[50px] text-[35px] font-bold text-primary-blue">Our Missiom</h1>
-                        <p className="text-primary-gray text-[16px] leading-[30px]">Producing, prototyping and testing sketches, high-fidelity wireframes and the final UI is a process that results in intuitive and impactful design that{"'"}s easy on the eyes.</p>
-
-                    </div>
-                </section>
+              <AboutUs /> 
 
                 <section className="w-full flex flex-col mt-20 xl:mt-40 gap-10">
                     <h1 className="leading-[50px] text-[50px] font-bold text-primary-blue">Check talents</h1>
