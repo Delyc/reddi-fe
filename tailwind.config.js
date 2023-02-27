@@ -8,7 +8,8 @@ module.exports = {
     extend: {
       colors: {
         "primary-orange" : "#eb5b39",
-        "primary-blue" : "#1d4865"
+        "primary-blue" : "#1d4865",
+        "primary-gray" : "#4F5665"
       },
       height: {
         60 : "60vh"

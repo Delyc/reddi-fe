@@ -1,33 +1,22 @@
 
-import posts from "data/posts";// import { Heading1, Heading3, Paragraph } from "../ui/Typography";
+import posts from "data/posts";
 import { Heading1, Heading3, Paragraph } from "@/components/ui/Typography";
-// import SideNavBarWrapper from "../wrappers/SideNavBarWrapper";
 import SideNavBarWrapper from "@/components/wrappers/SideNavBarWrapper";
 import Image from "next/image";
 import postImage from '../public/assets/post3.webp'
 import centerNavItems from "data/centerNavItems";
 import Link from "next/link";
-// import Button from "../ui/Button";
 import Button from "@/components/ui/Button";
-// import ContentWrapper from "../wrappers/ContentWrapper";
 import ContentWrapper from "@/components/wrappers/ContentWrapper";
-// import PageWrapper from "../wrappers/PageWrapper";
 import PageWrapper from "@/components/wrappers/PageWrapper";
 import { useSelector } from "react-redux"
-// import GetAll from "./GetAll";
 import GetAll from "@/components/sections/GetAll";
 
 
 const Home = () => {
-    const name = useSelector((state: any) => state.UserSignup.firstName)
-    
-
-    console.log("name", name)
     return (
         <PageWrapper>
-
             <SideNavBarWrapper />
-
             <ContentWrapper>
                 <div>
                     <Heading1>Trending Posts</Heading1>
@@ -40,7 +29,6 @@ const Home = () => {
                                         <Heading3 className="font-bold">{post.title}</Heading3>
                                         <Paragraph className="">{post.hook}</Paragraph>
                                     </div>
-
                                 </div>
                             )
                         })}

@@ -18,6 +18,7 @@ const initialState = {
 export const UserSignupSlice = createSlice({
     name: "UserSignup",
     initialState,
+    //creating reducer
     reducers: {
         setUserFirstName: (state, action) => {
             state.firstName = action.payload
