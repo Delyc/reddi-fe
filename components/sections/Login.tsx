@@ -11,6 +11,8 @@ import { useRouter } from "next/router";
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import Link from "next/link";
+import PasswordIcon from "../svgs/PasswordIcon";
+import ProfileIcon from "../svgs/ProfileIcon";
 
 type FormData = {
   username: string;
@@ -18,14 +20,14 @@ type FormData = {
 };
 
 const Login = () => {
-  
+
   const schema = yup.object().shape({
     username: yup.string().email().required(),
     password: yup.string().min(6).required(),
   });
 
   const { register, handleSubmit, formState: { errors } } = useForm<FormData>();
-  
+
   const userData = {
     username: "",
     password: "",
@@ -41,8 +43,8 @@ const Login = () => {
   const onSubmit = async (data: FormData) => {
     await userLoginFunc("accounts/login", userLogin)
       .then((res: { data: { data: { token: string; }; }; }) => {
-         localStorage.setItem("user", JSON.stringify(userLogin));
-         localStorage.setItem("token", res.data.data.token);
+        localStorage.setItem("user", JSON.stringify(userLogin));
+        localStorage.setItem("token", res.data.data.token);
         toast.success("sign up success");
         router.push("/createReddit")
       })
@@ -60,7 +62,7 @@ const Login = () => {
             <h1>Login</h1>
             <form className="flex flex-col gap-5 w-2/5" onSubmit={handleSubmit(onSubmit)}>
               <div className="flex relative items-center w-full">
-                <Email classname="absolute left-5" fill="#ffffff" />
+                 <ProfileIcon className="absolute left-5"/>
                 <Input
                   className="w-full px-14"
                   placeholder="Username"
@@ -68,11 +70,11 @@ const Login = () => {
                   onChange={inputHandler}
                   ref={register("username")}
                 />
-                  {errors.username && <p>{errors.username.message}</p>}
+                {errors.username && <p>{errors.username.message}</p>}
               </div>
 
               <div className="flex relative items-center w-full">
-                <Email classname="absolute left-5" fill="#ffffff" />
+              <PasswordIcon className="absolute left-5"/>
                 <Input
                   className="w-full px-14"
                   placeholder="Password"
