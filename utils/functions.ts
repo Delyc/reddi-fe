@@ -1,5 +1,4 @@
 import axios from "axios";
-// const baseurl = import.meta.env.VITE_REACT_APP_BASE_API_URL;
 
 export async function userSignupFunc(endpoint: string, body: any) {
   let response = await axios.post(

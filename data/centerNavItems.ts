@@ -6,14 +6,8 @@ export interface CenterNavItems{
 
 const centerNavItems: CenterNavItems[] = [
     {
-        title: "All Posts",
+        title: "Music",
         path: "/"
-
-    },
-    {
-        title: "test",
-        path: "/"
-
 
     },
     {
@@ -24,6 +18,12 @@ const centerNavItems: CenterNavItems[] = [
     },
     {
         title: "Dancing",
+        path: "/"
+
+
+    },
+    {
+        title: "Drawing",
         path: "/"
 
 

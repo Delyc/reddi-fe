@@ -1,33 +1,37 @@
-export interface Categories{
+export interface Categories {
     image: string,
     backText: string,
+    title: string
 
 }
 
 const categories: Categories[] = [
     {
-        image: "/assets/post3.webp",
-        backText: "testttttttt"
+        title: "Fashion",
+        image: "/assets/fashion.webp",
+        backText: "Anyone interested in Fashion, modelling and fashion design"
 
     },
     {
-        image: "/assets/post3.webp",
-        backText: "testttttttt"
+        title: "Drawing",
+        image: "/assets/drawing.webp",
+        backText: "Anyone interested in Drawing, art and painting"
 
     },
     {
-        image: "/assets/post3.webp",
-        backText: "testttttttt"
+        title: "Dancing",
+        image: "/assets/dancing.webp",
+        backText: "Anyone interested in any kind of dancing"
 
     },
     {
-        image: "/assets/post3.webp",
-        backText: "testttttttt"
+        title: "Singing",
+        image: "/assets/singing.webp",
+        backText: "Anyone interested in singing and song writing"
 
     },
-   
-  
-  ];
-  
-  export default categories;
-  
+
+
+];
+
+export default categories;

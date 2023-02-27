@@ -4,11 +4,15 @@ import Image from "next/image";
 import postImage from '../../public/assets/post3.webp'
 import Link from "next/link";
 import getUserToken from "../../utils/getUserToken";
+import { userAgent } from "next/server";
 
 const GetAll = () => {
     const [sub, setSub] = useState<any>();
     const [reddits, setRedits] = useState<any>();
     const [token, setToken] = useState("")
+
+let user = localStorage.getItem("user")
+    console.log("userna,e", user)
 
     useEffect(() => {
         return setToken(getUserToken());
@@ -39,17 +43,17 @@ const GetAll = () => {
                     reddits.map((reddit: any, index: number) => {
                         return (
                             <Link key={index} href={`/readMore/${reddit._id}`} className="flex flex-col gap-5 relative">
-                                <div className="mt-10 xl:px-16 bg-white relative py-5">
+                                <div className="mt-10 xl:px-16 bg-white relative py-5 flex flex-col gap-3">
                                     <p className="text-primary-orange font-semibold text-xl">{reddit.title}</p>
-                                    <div className="relative">
-                                        <Image className="w-full h-64 object-fill rounded-xl" src={postImage} alt="post image" width={100} height={100} />
+                                    <div className="relative xl:h-80 h-64 w-full">
+                                        <Image layout="fill" className="relative rounded-xl" src={reddit.image} alt="post image"/>
                                         {sub.map((sub: any, index: number) => {
                                             return (
                                                 <p className="absolute px-5 text-white font-bold py-1 flex justify-center w-24 bg-black/50 top-0 right-0" key={index}>{sub._id === reddit.subreddit ? sub.title : ""}</p>
                                             )
                                         })}
                                     </div>
-                                    <p className="text-primary-blue text-lg  leading-[30px]">{reddit.body} <span></span></p>
+                                    <p className="text-primary-blue text-lg  leading-[30px]">{reddit.body} <span>posted by {localStorage.getItem("user")}</span></p>
                                     <div className="flex gap-2 items-center">
                                         <p className="text-primary-orange">Read More</p>
                                         <svg className="w-8 h-8" width="800px" height="800px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">

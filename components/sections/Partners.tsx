@@ -13,9 +13,6 @@ const Partners = () => {
                     <Image className="w-28 h-10" src={discord} alt="image" width={100} height={100} />
                     <Image className="w-28 h-10" src={spotify} alt="image" width={100} height={100} />
                     <Image className="w-32 xl:h-40   xl:mt-[-50px]" src={amazon} alt="image" width={100} height={100} />
-
-
-
                 </section>
 
      );
