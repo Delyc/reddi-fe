@@ -11,6 +11,7 @@ import { useRouter } from "next/router";
 
 const CreateReddit = () => {
   const [token, setToken] = useState("");
+  const [err, setErr] = useState()
   const [options, setOptions] = useState<any>();
   const router = useRouter()
 
@@ -45,8 +46,10 @@ const CreateReddit = () => {
       router.push("/talents")
       console.log(res.data);
 
-    } catch (error) {
-      console.log(error);
+    } catch (error: any) {
+      setErr(error.response.data.message)
+      toast.error(`${error.response.data.message} Login again`)
+      router.push("/login")
     }
   };
 
@@ -55,7 +58,8 @@ const CreateReddit = () => {
       <PageWrapper>
         <Navbar />
         <ContentWrapper className="flex items-center">
-          <div className="form-post">
+          <h1 className="text-2xl">Show your talent</h1>
+          <div className="form-post w-2/5">
             {options ? (
               <form
                 onSubmit={(e) => createSub(e)}
@@ -90,6 +94,7 @@ const CreateReddit = () => {
                   name="body"
                   required
                   placeholder="body"
+                  rows={4}
                 />
                 <input className="py-3 px-10 rounded-sm bg-primary-orange text-white" type="submit" value="Submit" />
               </form>
