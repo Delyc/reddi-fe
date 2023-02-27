@@ -7,4 +7,4 @@ const Icons = () => {
      );
 }
  
-export function Icons;
+export default Icons;

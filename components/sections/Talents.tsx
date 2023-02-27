@@ -42,7 +42,7 @@ const Talents = () => {
                     <div className=" grid grid-cols-1 xl:grid-cols-4  relative gap-x-10 w-full mt-10">
                         {categories.map((category, index) => {
                             return (
-                                <FlipCard image={category.image} backText={category.backText} />
+                                <FlipCard key={index} image={category.image} backText={category.backText} />
                             )
                         })}
                     </div>
