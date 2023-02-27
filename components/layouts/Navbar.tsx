@@ -17,7 +17,7 @@ const Navbar = () => {
   const navLinks = [
     { href: '/', label: 'Home' },
     { href: '/talents', label: 'Explore Talents' },
-    { href: '/showTalents', label: 'Show your Talents' },
+    { href: '/createReddit', label: 'Show your Talents' },
   ];
 
 

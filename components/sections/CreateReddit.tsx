@@ -60,10 +60,11 @@ const CreateReddit = () => {
               <form
                 onSubmit={(e) => createSub(e)}
                 encType="multipart/form-data"
+                className="flex flex-col gap-3"
               >
-                <select name="subreddit" required className="form-control">
+                <select name="subreddit" required className="outline-none px-10 py-3 border border-primary-gray/20 rounded-md">
                   <option value="" hidden>
-                    Select subreddit...
+                    Select Category...
                   </option>
                   {options.map((option: any, index: any) => (
                     <option key={index} value={option.id}>
@@ -71,25 +72,26 @@ const CreateReddit = () => {
                     </option>
                   ))}
                 </select>
-                <input
-                  className="img-fl"
+                {/* <input
+                  className="outline-none px-10 py-3 border border-primary-gray/20 rounded-md"
                   type="file"
                   name="image"
                   accept="image/*"
-                />
+                /> */}
                 <input
-                  className="form-control"
+                  className="outline-none px-10 py-3 border border-primary-gray/20 rounded-md"
                   name="title"
                   placeholder="title"
+
                 />
 
                 <textarea
-                  className="form-control"
+                  className="outline-none px-10 py-3 border border-primary-gray/20 rounded-md"
                   name="body"
                   required
                   placeholder="body"
                 />
-                <input className="btn-add-post" type="submit" value="Submit" />
+                <input className="py-3 px-10 rounded-sm bg-primary-orange text-white" type="submit" value="Submit" />
               </form>
             ) : (
               "Loading"
