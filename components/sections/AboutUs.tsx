@@ -1,5 +1,5 @@
 import Image from "next/image";
-import heroImage from '../../public/assets/heroImage.png'
+import heroImage from '../../public/assets/heroimage.png'
 
 const AboutUs = () => {
     return ( 
@@ -14,7 +14,6 @@ const AboutUs = () => {
             <Image className="w-14 h-14 rounded-full" src={heroImage} alt="image" width={100} height={100} />
             <h1 className="leading-[50px] text-[35px] font-bold text-primary-blue">Our Missiom</h1>
             <p className="text-primary-gray text-[16px] leading-[30px]">Producing, prototyping and testing sketches, high-fidelity wireframes and the final UI is a process that results in intuitive and impactful design that{"'"}s easy on the eyes.</p>
-
         </div>
     </section>
      );

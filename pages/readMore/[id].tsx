@@ -80,7 +80,7 @@ const ReadMore = () => {
                         {post ? (
                             <>
                                 <div className="xl:px-20 mx-auto flex flex-col gap-3">
-                                    <Image className="w-full xl:h-60 object-contain rounded-xl" src={postImage} alt="Post image" width={100} height={100} />
+                                    <Image className="w-full xl:h-60 object-contain rounded-xl" src={post.image} alt="Post image" width={100} height={100} />
                                     <p className="text-xl text-primary-orange font-bold">{post.title}</p>
                                     <p>{post.body}</p>
                                 </div>
