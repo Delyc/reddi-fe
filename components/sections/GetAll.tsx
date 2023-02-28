@@ -12,7 +12,7 @@ const GetAll = () => {
     const [sub, setSub] = useState<any>();
     const [reddits, setRedits] = useState<any>();
     const [token, setToken] = useState("")
-    const [user, setUser] = useState("")
+    const [user, setUser] = useState<any>("")
 
   
     useEffect(() => {
