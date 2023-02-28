@@ -12,13 +12,13 @@ const GetAll = () => {
     const [sub, setSub] = useState<any>();
     const [reddits, setRedits] = useState<any>();
     const [token, setToken] = useState("")
-    const [user, setUser] = useState<any>("")
+    const [user, setUser] = useState("")
 
-    //accessing local storage from useEffect 
-    // useEffect(() => {
-    //     return setUser(getUserDetails())
-    // })
+  
+    useEffect(() => {
+        return setUser(getUserDetails());
 
+    }, [])
     useEffect(() => {
         return setToken(getUserToken());
 
