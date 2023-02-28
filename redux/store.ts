@@ -16,8 +16,7 @@ const rootReducer = combineReducers({
     UserSignup : UserSignupSlice,
     UserLogin : UserLoginSlice,
     SubReddit : SubRedditSlice,
-    AllPosts : AllPostsSlice
- 
+    AllPosts : AllPostsSlice,
 })
 
 //persisting all reducers into states even when a page is refreshed
