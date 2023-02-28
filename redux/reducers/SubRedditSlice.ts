@@ -7,7 +7,7 @@ const initialState = {
   subRedditContent: "",
 };
 
-//creating signup slice
+//creating subreddit slice
 
 export const SubRedditSlice = createSlice({
   name: "SubReddit",

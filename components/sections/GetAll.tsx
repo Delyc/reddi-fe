@@ -13,7 +13,6 @@ const GetAll = () => {
 
     useEffect(() => {
         return setToken(getUserToken());
-
     }, [])
 
     useEffect(() => {
@@ -39,7 +38,7 @@ const GetAll = () => {
                 {reddits ?
                     reddits.map((reddit: any, index: number) => {
                         return (
-                            <Link key={index} href={`/readMore/${reddit._id}`} className="flex flex-col gap-5 relative">
+                            <Link data-testid="todo" key={index} href={`/readMore/${reddit._id}`} className="flex flex-col gap-5 relative">
                                 <div className="mt-10 xl:px-16 bg-white relative py-5 flex flex-col gap-3">
                                     <p className="text-primary-orange font-semibold text-xl">{reddit.title}</p>
                                     <div className="relative xl:h-80 h-64 w-full">
