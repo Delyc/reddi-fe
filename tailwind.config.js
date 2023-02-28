@@ -16,6 +16,9 @@ module.exports = {
       },
       borderRadius: {
         10: "0.625rem"
+      },
+      lineHeight:{
+        30: "30px"
       }
     },
   },

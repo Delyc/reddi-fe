@@ -1,10 +1,8 @@
 import { useState, useEffect } from "react";
 import { getAllRedditsFunc, getSubRedditsFunc } from "../../utils/functions";
 import Image from "next/image";
-import postImage from '../../public/assets/post3.webp'
 import Link from "next/link";
 import getUserToken from "../../utils/getUserToken";
-import { userAgent } from "next/server";
 import getUserDetails from "utils/getUserDetails";
 import Readmore from "../svgs/Readmore";
 
@@ -12,13 +10,7 @@ const GetAll = () => {
     const [sub, setSub] = useState<any>();
     const [reddits, setRedits] = useState<any>();
     const [token, setToken] = useState("")
-    const [user, setUser] = useState<any>("")
 
-  
-    useEffect(() => {
-        return setUser(getUserDetails());
-
-    }, [])
     useEffect(() => {
         return setToken(getUserToken());
 
@@ -58,7 +50,7 @@ const GetAll = () => {
                                             )
                                         })}
                                     </div>
-                                    <p className="text-primary-blue text-lg  leading-[30px]">{reddit.body} Posted by<span className="font-bold text-primary-orange"> {user.username}</span></p>
+                                    <p className="text-primary-blue text-lg  leading-30">{reddit.body} Posted by<span className="font-bold text-primary-orange"> </span></p>
                                     <div className="flex gap-2 items-center">
                                         <p className="text-primary-orange">Read More</p>
                                         <Readmore />
